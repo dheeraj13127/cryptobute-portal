@@ -1,0 +1,75 @@
+$nunito: "Nunito", sans-serif;
+$inter: "Inter", sans-serif;
+$poppins: "Poppins", sans-serif;
+$roboto: "Roboto", sans-serif;
+$openSans: "Open Sans", sans-serif;
+
+.authenticationNavbar{
+    box-shadow: none !important;
+    background:#6C97A9 !important;
+    padding: 10px 80px !important;
+    
+} 
+.authenticationNavbarLogoBox{
+    flex:1 !important;
+}
+// .authenticationNavbarLogo{
+    // height:50px;
+    // width:200px;
+// }
+.authenticationNavbarItems{
+    text-transform: capitalize !important;
+    font-family: $poppins !important;
+    font-weight: bold !important;
+    color:#6C97A9 !important;
+    border: 2px solid #6C97A9 !important;
+    background-color: #ffffff !important;
+    border-radius: 30px !important;
+    margin-left: 30px !important;
+    padding: 8px 25px !important;
+    
+}
+
+.authenticationNavbarUsecase{
+    text-transform: capitalize !important;
+    font-family: $poppins !important;
+    font-weight: 600 !important;
+    color:#ffffff !important;
+    font-size: 15px !important;
+    margin-left: 30px !important;
+}
+.authenticationNavbarItems:hover{
+  color: white !important;
+   border: 2px solid white !important; 
+   background-color: transparent !important;
+}
+.authenticationSmallNavbarItems{
+    text-transform: capitalize !important;
+    font-family: $poppins !important;
+    font-weight: 600 !important;
+    color:black !important;
+}
+
+.authenticationNavbarSmall{
+    display: none !important;
+}
+.authenticationNavbarMenuIcon{
+    color: #ffffff !important;
+}
+.css-hyum1k-MuiToolbar-root{
+    padding: 0px !important;
+}
+@media only screen and (max-width: 768px) {
+    .authenticationNavbarLarge{
+        display: none !important;
+    }
+    .authenticationNavbarSmall{
+        display: flex !important;
+    }
+   }
+@media only screen and (max-width: 992px) {
+    .authenticationNavbar{
+        padding: 15px 20px !important;
+    }
+  }
+  
