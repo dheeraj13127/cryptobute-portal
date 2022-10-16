@@ -1,0 +1,63 @@
+
+$nunito: "Nunito", sans-serif;
+$inter: "Inter", sans-serif;
+$poppins: "Poppins", sans-serif;
+$roboto: "Roboto", sans-serif;
+$openSans: "Open Sans", sans-serif;
+
+
+.css-1vfttrn-MuiModal-root-MuiDrawer-root .MuiDrawer-paper{
+    background-color: #ADB9C7 !important;
+}
+.dashboardDrawerChip{
+    margin-right: 10px !important;
+    color: #040C27 !important;
+    background-color: #ADB9C7 !important;
+    font-family: $poppins !important;
+    font-weight: 500 !important;
+    font-size: 15px !important;
+    text-transform: capitalize  !important;
+    border: 2px solid #040C27 !important;
+
+}
+
+.dashboardDrawerUserImg{
+    height: 50px !important;
+    width: 50px !important;
+    border-radius: 50% !important;
+    margin-top: 50px !important;
+    border: 2px solid #040C27 !important;
+}
+.dashboardDrawerListItem{
+    color: #040C27 !important;
+    font-family: $poppins !important;
+    font-weight: 500 !important;
+    font-size: 15px !important;
+    
+    text-transform: capitalize  !important;
+}
+.dashboardDrawerListItemBox{
+    margin-top: 15px !important;
+}
+.dashboardDrawerListProfile{
+    display: flex !important;
+    align-items: center !important;
+    margin-top: 30px !important;
+  
+}
+.dashboardDrawerUserName{
+    margin-top: 45px !important;
+    margin-left: 15px !important;
+    font-family: $poppins !important;
+    font-weight: 500 !important;
+    text-transform: capitalize  !important;
+    color: #040C27 !important;
+}
+.dashboardDrawerLogo{
+    height: 50px !important;
+}
+
+// .dashboardDrawerLogoBox{
+//     display: flex !important;
+//     justify-content: center !important;
+// }
