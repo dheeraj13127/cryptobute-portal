@@ -1,0 +1,127 @@
+$nunito: "Nunito", sans-serif;
+$inter: "Inter", sans-serif;
+$poppins: "Poppins", sans-serif;
+$roboto: "Roboto", sans-serif;
+$openSans: "Open Sans", sans-serif;
+$fjalla: "Fjalla One",sans-serif;
+
+.healthBulletinContainer{
+   
+    // margin-top: 50px !important;
+}
+.healthBulletinHeader{
+    text-align: center !important;
+    font-family: $fjalla !important;
+    color: white !important;
+    
+}
+.healthBulletinHeaderBox{
+    padding: 30px 0px !important;
+    background-color: #9D9D9D !important;
+}
+.healthBulletinInfoBox{
+    margin-top: 20px !important;
+}
+.healthBulletinInfo{
+    color: white !important;
+   text-align: center !important;
+   
+}
+
+.healthBulletinCardParent{
+    margin: 10px !important;
+    display:flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+}
+.healthBulletinCardParent:hover{
+    transform: translateZ(20px) !important;
+}
+
+.healthBulletinCard {
+    padding: 5px !important;
+      margin-top: 20px !important;
+      background: #272D37 !important; 
+      backdrop-filter: blur( 4px ) !important;
+      -webkit-backdrop-filter: blur( 4px ) !important;
+      border-radius: 15px !important;
+      
+    
+      
+    }
+    
+.healthBulletinImgBox{
+        display: flex !important;
+        align-items: center !important;
+        
+    }
+.healthBulletinCardImg{
+        width:320px !important;
+        height:320px !important;
+        border-radius: 15px !important;
+    }
+
+.healthBulletinParentBox{
+        overflow: hidden !important;
+
+    }
+.healthBulletinParentSubBox{
+    display:flex !important;
+    width: calc(250px*100);
+    animation: scroll 450s linear infinite !important;
+ 
+}
+.healthBulletinCardInfoBox{
+
+    margin-top: 20px !important;
+ 
+ }
+.healthBulletinCardInfo{
+    color:white !important;
+    font-family: $nunito !important;
+    font-weight: 600 !important;
+}
+
+.healthBulletinNavigateBtnBox{
+    position: absolute !important;
+    z-index: 999 !important;
+    top: 35px !important;
+    right: 30px !important;
+    background-color: #9D9D9D !important;
+    border-radius: 50% !important;
+    padding:8px 7px 5px 7px !important;
+  }
+.healthBulletinNavigateBtn{
+    color: white !important;
+}
+@keyframes scroll{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(calc(-250px*50));
+    }
+}
+@keyframes animate{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(calc(-250px*5));
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    
+    .healthBulletinCardImg{
+        width:250px !important;
+        height:250px !important;
+        border-radius: 15px !important;
+    }
+    .healthBulletinHeader{
+        font-size: 28px !important;
+    }
+    .healthBulletinInfo{
+        font-size: 17px !important;
+    }
+   }

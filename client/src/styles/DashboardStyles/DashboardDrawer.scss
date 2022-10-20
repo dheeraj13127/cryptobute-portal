@@ -7,17 +7,18 @@ $openSans: "Open Sans", sans-serif;
 
 
 .css-1vfttrn-MuiModal-root-MuiDrawer-root .MuiDrawer-paper{
-    background-color: #ADB9C7 !important;
+    background-color: #9D9D9D !important;
 }
 .dashboardDrawerChip{
     margin-right: 10px !important;
-    color: #040C27 !important;
-    background-color: #ADB9C7 !important;
+    color: white !important;
+    background-color: #6C97A9 !important;
     font-family: $poppins !important;
     font-weight: 500 !important;
     font-size: 15px !important;
     text-transform: capitalize  !important;
-    border: 2px solid #040C27 !important;
+    border: 2px solid white !important;
+    padding: 15px 15px !important;
 
 }
 
@@ -29,7 +30,7 @@ $openSans: "Open Sans", sans-serif;
     border: 2px solid #040C27 !important;
 }
 .dashboardDrawerListItem{
-    color: #040C27 !important;
+    color: white !important;
     font-family: $poppins !important;
     font-weight: 500 !important;
     font-size: 15px !important;
