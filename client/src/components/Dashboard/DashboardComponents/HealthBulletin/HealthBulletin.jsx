@@ -18,7 +18,7 @@ function HealthAndNews() {
     <div className='healthBulletinContainer'>
         <Grid>
             <Grid item xs={12} className="healthBulletinHeaderBox">
-            <Typography variant='h4' className='healthBulletinHeader'>Health Bulletins</Typography>
+            <Typography variant='h4' className='healthBulletinHeader'>Health Bulletin</Typography>
             <div className='healthBulletinInfoBox'>
              
               <Typography variant='h6' className='healthBulletinInfo'>Checkout latest news and updates on health</Typography>
