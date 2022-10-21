@@ -13,7 +13,7 @@ function HealthAndNews() {
   },[])// eslint-disable-line react-hooks/exhaustive-deps 
   let healthBulletinData=useSelector(state=>state.common.healthBulletinData)
   console.log(healthBulletinData)
-
+ 
   return (
     <div className='healthBulletinContainer'>
         <Grid>
