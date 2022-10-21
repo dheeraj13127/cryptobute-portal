@@ -46,7 +46,7 @@ function DrawerComponent({userData,ethBalance,metamaskAccount}) {
       <Drawer
         open={openDrawer}
         onClose={() => setOpenDrawer(false)}
-        sx={{
+        sx={{ 
             width: drawerWidth,
             flexShrink: 0,
             '& .MuiDrawer-paper': {
