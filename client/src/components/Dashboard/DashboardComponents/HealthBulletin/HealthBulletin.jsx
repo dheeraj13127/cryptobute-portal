@@ -38,7 +38,7 @@ function HealthAndNews() {
                         <div className="healthBulletinImgBox">
                         <img src={hb.urlToImage&&hb.urlToImage} loading="eager" alt="health" className="healthBulletinCardImg" />
                         <span className="healthBulletinNavigateBtnBox">
-                          <a href={hb.url} target="_blank"  className='navigatingLink'><ExitToAppIcon className='healthBulletinNavigateBtn'/></a>
+                          <a href={hb.url} target="_blank" rel='noopener noreferrer'  className='navigatingLink'><ExitToAppIcon className='healthBulletinNavigateBtn'/></a>
                         </span>
                         </div>
                         <div className="healthBulletinCardInfoBox">

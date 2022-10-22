@@ -46,6 +46,11 @@ function DrawerComponent({userData,ethBalance,metamaskAccount}) {
       <Drawer
         open={openDrawer}
         onClose={() => setOpenDrawer(false)}
+        PaperProps={{
+          sx:{
+            backgroundColor:"#9D9D9D"
+          }
+        }}
         sx={{ 
             width: drawerWidth,
             flexShrink: 0,
