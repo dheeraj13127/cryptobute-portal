@@ -30,7 +30,7 @@ function HealthAndNews() {
 
            
             {
-              healthBulletinData&&healthBulletinData.filter(hb=>hb.media!==null).map((hb,k)=>(
+              healthBulletinData&&healthBulletinData.filter(hb=>hb.media!==null&&hb.title.length<100).map((hb,k)=>(
                 
                   <div key={k} component={Card} className="healthBulletinCardParent">
                     <div className='healthBulletinCard'>
