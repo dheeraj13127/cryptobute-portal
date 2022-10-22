@@ -2,22 +2,17 @@ import axios from 'axios'
 import { GET_HEALTH_BULLETIN_DATA } from '../constants/constants'
 
 export const getHealthBulletinData = currDate => async (dispatch) => {
-    const formatDate=(date)=> {
-        var d = new Date(date),
-            month = '' + (d.getMonth() + 1),
-            day = '' + d.getDate(),
-            year = d.getFullYear();
-    
-        if (month.length < 2) 
-            month = '0' + month;
-        if (day.length < 2) 
-            day = '0' + day;
-    
-        return [year, month, day].join('-');
+   
+    let config={
+        headers:{
+            'x-api-key': '3fCOY3KW04rSSk7K2RhLOJNpe3_dxNGVc27FELEIBt0',
+  
+        }
     }
-   await axios.get(`https://newsapi.org/v2/everything?q=health&apiKey=4a89bef614eb4287a6ae9f0b90adedb3`)
+   await axios.get(`https://api.newscatcherapi.com/v2/search?q=health&lang=en&from='2022/10/22'&page_size=100`,config)
     .then(res=>{
-        console.log(res)
+        
+
         dispatch({
 		type:GET_HEALTH_BULLETIN_DATA ,
 		payload: res.data.articles

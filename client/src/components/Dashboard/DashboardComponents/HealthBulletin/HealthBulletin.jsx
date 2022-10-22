@@ -30,15 +30,15 @@ function HealthAndNews() {
 
            
             {
-              healthBulletinData&&healthBulletinData.map((hb,k)=>(
+              healthBulletinData&&healthBulletinData.filter(hb=>hb.media!==null).map((hb,k)=>(
                 
                   <div key={k} component={Card} className="healthBulletinCardParent">
                     <div className='healthBulletinCard'>
                       <CardContent>
                         <div className="healthBulletinImgBox">
-                        <img src={hb.urlToImage&&hb.urlToImage} loading="eager" alt="health" className="healthBulletinCardImg" />
+                        <img src={hb.media&&hb.media} loading="eager" alt="health" className="healthBulletinCardImg" />
                         <span className="healthBulletinNavigateBtnBox">
-                          <a href={hb.url} target="_blank" rel='noopener noreferrer'  className='navigatingLink'><ExitToAppIcon className='healthBulletinNavigateBtn'/></a>
+                          <a href={hb.link} target="_blank" rel='noopener noreferrer'  className='navigatingLink'><ExitToAppIcon className='healthBulletinNavigateBtn'/></a>
                         </span>
                         </div>
                         <div className="healthBulletinCardInfoBox">
