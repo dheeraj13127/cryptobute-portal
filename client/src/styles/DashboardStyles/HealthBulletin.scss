@@ -94,6 +94,11 @@ $fjalla: "Fjalla One",sans-serif;
 .healthBulletinNavigateBtn{
     color: white !important;
 }
+.healthBulletinLoaderBox{
+    display: flex !important;
+    justify-content:center !important;
+    margin-top: 100px !important;
+}
 @keyframes scroll{
     0%{
         transform: translateX(0);
