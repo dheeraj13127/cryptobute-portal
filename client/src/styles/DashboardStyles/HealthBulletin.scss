@@ -45,7 +45,7 @@ $fjalla: "Fjalla One",sans-serif;
       backdrop-filter: blur( 4px ) !important;
       -webkit-backdrop-filter: blur( 4px ) !important;
       border-radius: 15px !important;
-      
+      box-shadow: 3px 3px 8px #202020 !important;
     
       
     }
@@ -89,7 +89,7 @@ $fjalla: "Fjalla One",sans-serif;
     right: 30px !important;
     background-color: #9D9D9D !important;
     border-radius: 50% !important;
-    padding:8px 7px 5px 7px !important;
+    padding:8px 7px 3px 7px !important;
   }
 .healthBulletinNavigateBtn{
     color: white !important;
