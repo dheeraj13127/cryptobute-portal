@@ -25,6 +25,7 @@ $fjalla: "Fjalla One",sans-serif;
 .healthBulletinInfo{
     color: white !important;
    text-align: center !important;
+   font-family: $inter !important;
    
 }
 
@@ -40,7 +41,7 @@ $fjalla: "Fjalla One",sans-serif;
 
 .healthBulletinCard {
     padding: 5px !important;
-      margin-top: 20px !important;
+      margin-top: 30px !important;
       background: #272D37 !important; 
       backdrop-filter: blur( 4px ) !important;
       -webkit-backdrop-filter: blur( 4px ) !important;

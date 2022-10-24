@@ -50,8 +50,6 @@ function HealthAndNews() {
                               {hb.title}
                             </Typography>
                           </div>
-                       
-                          
                         </CardContent>
                       </div>
                     </div>

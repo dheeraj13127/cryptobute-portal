@@ -1,10 +1,11 @@
 import React from 'react'
-import {DashboardNavbar,HealthBulletin} from '.'
+import {DashboardNavbar,FundraisersPool,HealthBulletin} from '.'
 function Dashboard() {
   return (
     <div>
       <DashboardNavbar/>
       <HealthBulletin/>
+      <FundraisersPool/>
     </div>
   )
 }
