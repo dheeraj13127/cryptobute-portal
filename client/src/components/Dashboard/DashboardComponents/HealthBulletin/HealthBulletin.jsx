@@ -27,7 +27,7 @@ function HealthAndNews() {
             </div>
             </Grid>
            
-            <div >
+            <div className='healthBulletinParentBox'>
 
            
             {
