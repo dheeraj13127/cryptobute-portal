@@ -1,25 +1,35 @@
 [
 	{
-		"constant": false,
+		"constant": true,
 		"inputs": [
 			{
-				"name": "index",
-				"type": "uint256"
+				"name": "",
+				"type": "address"
 			}
 		],
-		"name": "approveRequest",
-		"outputs": [],
+		"name": "approvers",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
 		"payable": false,
-		"stateMutability": "nonpayable",
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
-		"constant": false,
+		"constant": true,
 		"inputs": [],
-		"name": "contibute",
-		"outputs": [],
-		"payable": true,
-		"stateMutability": "payable",
+		"name": "totalFund",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -63,117 +73,9 @@
 		"type": "function"
 	},
 	{
-		"inputs": [
-			{
-				"name": "minimum",
-				"type": "uint256"
-			},
-			{
-				"name": "totFund",
-				"type": "uint256"
-			},
-			{
-				"name": "creator",
-				"type": "address"
-			},
-			{
-				"name": "time",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "approvers",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "approversAddress",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "approversCount",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"constant": true,
 		"inputs": [],
 		"name": "collectedFund",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "createdAt",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "donated",
 		"outputs": [
 			{
 				"name": "",
@@ -192,20 +94,6 @@
 			{
 				"name": "",
 				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "minimumContribution",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
 			}
 		],
 		"payable": false,
@@ -258,7 +146,7 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "totalFund",
+		"name": "approversCount",
 		"outputs": [
 			{
 				"name": "",
@@ -268,5 +156,117 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "minimumContribution",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "approversAddress",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "createdAt",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "index",
+				"type": "uint256"
+			}
+		],
+		"name": "approveRequest",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "contibute",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "donated",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"name": "minimum",
+				"type": "uint256"
+			},
+			{
+				"name": "totFund",
+				"type": "uint256"
+			},
+			{
+				"name": "creator",
+				"type": "address"
+			},
+			{
+				"name": "time",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
 	}
 ]

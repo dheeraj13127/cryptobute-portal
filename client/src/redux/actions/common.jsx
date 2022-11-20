@@ -17,7 +17,7 @@ export const getHealthBulletinData = currDate => async (dispatch) => {
     }
     let config={
         headers:{
-            'x-api-key': '0go1oqVs-TSlV8CFzej3jmYAmLaNh003w0QfAWiyUgM',
+            'x-api-key': 'A9Qej-2Cte0ySyOAXPpsmhJLm8KGH-L7dIqftVGUDY8',
   
         }
     }

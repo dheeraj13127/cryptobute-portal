@@ -29,3 +29,13 @@ $fjalla: "Fjalla One",sans-serif;
     text-align: center !important;
     font-family: $inter !important;
 }
+
+@media only screen and (max-width: 768px) {
+
+    .fundraisersPoolHeader{
+        font-size: 28px !important;
+    }
+    .fundraisersPoplInfo{
+        font-size: 17px !important;
+    }
+   }

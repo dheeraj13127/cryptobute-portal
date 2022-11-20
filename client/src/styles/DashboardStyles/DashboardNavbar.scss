@@ -24,6 +24,10 @@ $openSans: "Open Sans", sans-serif;
     font-weight: 600 !important;
     color:white !important;
     margin-right: 20px !important;
+  
+}
+.dashboardNavbarItemsActive{
+    text-decoration: underline !important;
 }
 .dashboardNavbarItems:hover{
   color: white !important;
@@ -91,6 +95,6 @@ $openSans: "Open Sans", sans-serif;
 
 @media only screen and (max-width: 992px) {
     .dashboardNavbar{
-        padding: 5px 15px !important;
+        padding: 5px 10px !important;
     }
   } 

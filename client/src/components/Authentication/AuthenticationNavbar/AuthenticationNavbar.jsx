@@ -37,11 +37,7 @@ function AuthenticatonNavbar() {
                                         </a>
                                         )
                                     }
-                                    <a className="navigatingLink" href="/">
-                                        <Button size="small" className="authenticationNavbarUsecase">
-                                            Use cases
-                                        </Button>
-                                    </a>
+                                  
                                     <a className="navigatingLink" href="/signup">
                                         <Button size="small" className="authenticationNavbarItems">
                                             Sign up
@@ -89,14 +85,7 @@ function AuthenticatonNavbar() {
                                             </a>
                                             )
                                         }
-                                            <a className="navigatingLink" href="/">
-                                                <MenuItem
-                                                    className="authenticationSmallNavbarItems"
-                                                    onClick={handleClose}
-                                                >
-                                                    Use cases
-                                                </MenuItem>
-                                            </a>
+                                            
                                             <a className="navigatingLink" href="/signup">
                                                 <MenuItem
                                                     className="authenticationSmallNavbarItems"

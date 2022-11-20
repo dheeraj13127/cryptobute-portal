@@ -16,7 +16,7 @@ $fjalla: "Fjalla One",sans-serif;
     
 }
 .healthBulletinHeaderBox{
-    padding: 30px 0px !important;
+    padding: 30px 20px !important;
     background-color: #9D9D9D !important;
 }
 .healthBulletinInfoBox{
@@ -98,7 +98,7 @@ $fjalla: "Fjalla One",sans-serif;
 .healthBulletinLoaderBox{
     display: flex !important;
     justify-content:center !important;
-    margin-top: 100px !important;
+    margin: 150px 0px !important;
 }
 @keyframes scroll{
     0%{
@@ -130,4 +130,5 @@ $fjalla: "Fjalla One",sans-serif;
     .healthBulletinInfo{
         font-size: 17px !important;
     }
+    .healthBulletinContainer{}
    }

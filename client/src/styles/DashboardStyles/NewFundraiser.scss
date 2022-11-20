@@ -1,0 +1,107 @@
+$nunito: "Nunito", sans-serif;
+$inter: "Inter", sans-serif;
+$poppins: "Poppins", sans-serif;
+$roboto: "Roboto", sans-serif;
+$openSans: "Open Sans", sans-serif;
+$fjalla: "Fjalla One",sans-serif;
+
+
+.newFundraiserContainer{
+    background-color: #D9D9D9 !important;
+   
+}
+.NewFundraiserAssetBox{
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 30px !important;
+}
+.newFundraiserFormBox{
+    margin-top: 50px !important;
+}
+
+.newFundraiserBox{
+
+    border-radius: 10px;
+    margin-top: 80px !important;
+    margin-bottom: 80px !important;
+}
+.newFundraiserFormBox{
+    padding: 20px;
+    box-shadow: 0px 0px 10px 2px rgba(4,12,39,0.75);
+    -webkit-box-shadow: 0px 0px 10px 2px rgba(4,12,39,0.75);
+    -moz-box-shadow: 0px 0px 10px 2px rgba(4,12,39,0.75);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5.6px);
+    -webkit-backdrop-filter: blur(5.6px);
+   
+
+}
+
+
+
+
+
+.newFundraiserInput{
+    font-family: $poppins !important;
+}
+
+.newFundraiserInput::-webkit-outer-spin-button,
+.newFundraiserInput::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+}
+
+.newFundraiserUpload{
+    border:1px dotted black;
+    padding: 10px;
+}
+.newFundraiserUploadInfo{
+    text-align: center !important;
+    margin-top: 20px !important;
+}
+.newFundraiserUploadInfoTitle{
+    font-family: $poppins !important;
+    text-align: center !important;
+}
+
+
+.newFundraiserPreviousBtn{
+    margin: 20px 0px 0px 20px !important ;
+    background-color: black !important;
+    
+}
+.newFundraiserNextBtn{
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37) !important;
+    backdrop-filter: blur(10.5px) !important;
+    background-color: black !important;
+}
+.newFundraiserSubmitBtn{
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37) !important;
+    backdrop-filter: blur(10.5px) !important;
+    background-color: black !important;
+}
+
+.newFundraiserInput:active{
+    border-color:#000000 !important;
+}
+@media only screen and (max-width: 600px) {
+    .newFundraiserAsset{
+            width: 250px !important;
+            height: 250px !important;
+    }
+    .newFundraiserFormBox{
+        margin-top: 0px !important;
+    }
+   }
+
+   @media only screen and (max-width: 992px) {
+    
+    .newFundraiserContainer{
+        padding: 10px 30px !important;
+    }
+ 
+    .newFundraiserParentContainer{
+        padding: 20px 20px !important;
+    }
+   }

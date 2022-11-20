@@ -49,5 +49,17 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "deployedAddress",
+				"type": "address"
+			}
+		],
+		"name": "NewDeployedAddress",
+		"type": "event"
 	}
 ]

@@ -18,6 +18,23 @@ $openSans: "Open Sans", sans-serif;
     padding: 15px 15px !important;
 
 }
+.dashboardDrawerWallet{
+    margin-right: 10px !important;
+    color: white !important;
+    background-color: #6C97A9 !important;
+    font-family: $poppins !important;
+    font-weight: 500 !important;
+    font-size:15px !important;
+    text-transform: capitalize  !important;
+    border: 2px solid white !important;
+    padding: 5px 10px !important;
+    border-radius: 20px !important;
+   
+}
+.extraBorder{
+    border-bottom: 2px solid white !important;
+    margin-top: 20px !important;
+}
 
 .dashboardDrawerUserImg{
     height: 50px !important;
@@ -31,8 +48,12 @@ $openSans: "Open Sans", sans-serif;
     font-family: $poppins !important;
     font-weight: 500 !important;
     font-size: 15px !important;
-    
+    margin-left: 4px !important;
     text-transform: capitalize  !important;
+}
+.dashboardDrawerListItemActive{
+    
+    color: #040C27 !important;
 }
 .dashboardDrawerListItemBox{
     margin-top: 15px !important;
@@ -53,6 +74,10 @@ $openSans: "Open Sans", sans-serif;
 }
 .dashboardDrawerLogo{
     height: 50px !important;
+    
+}
+.dashboardDrawerListItemBoxLogo{
+    border-bottom: 2px solid white !important;
 }
 
 // .dashboardDrawerLogoBox{
