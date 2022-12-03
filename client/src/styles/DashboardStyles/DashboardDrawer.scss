@@ -76,10 +76,20 @@ $openSans: "Open Sans", sans-serif;
     height: 50px !important;
     
 }
-.dashboardDrawerListItemBoxLogo{
-    border-bottom: 2px solid white !important;
-}
 
+
+.dashboardDrawerNotificationBox{
+    display: flex !important;
+    align-items: center !important;
+     border-bottom: 2px solid white !important;
+
+}
+.dashboardDrawerNotification{
+    color: white !important;
+}
+.dashboardDrawerNotificationBadge{
+    margin-top: -23px !important;
+}
 // .dashboardDrawerLogoBox{
 //     display: flex !important;
 //     justify-content: center !important;

@@ -1,0 +1,48 @@
+$nunito: "Nunito", sans-serif;
+$inter: "Inter", sans-serif;
+$poppins: "Poppins", sans-serif;
+$roboto: "Roboto", sans-serif;
+$openSans: "Open Sans", sans-serif;
+$fjalla: "Fjalla One",sans-serif;
+
+
+.myFundraiserContainer{
+    background-color: #D9D9D9 !important;
+    height: 100vh !important;
+    padding: 15px 80px !important;
+    
+   
+}
+
+.myFundraiserContainerMainBox {
+    margin-top: 150px !important;
+    box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.2) !important;
+    padding: 20px 20px !important;
+    background: #6C97A9 !important;
+    border-radius: 10px !important;
+}
+.myFundraisersHeader{
+    margin-top: 25px !important;
+    color: white !important;
+    font-family: $poppins !important;
+    font-weight: 600 !important;
+    background-color: black !important;
+    padding: 10px !important;
+    border-radius: 30px !important;
+    text-align: center !important;
+}
+.myFundraiserViewTableBox{
+    margin-top: 20px !important;
+}
+.myFundraisersViewUpload{
+    margin-top: 20px !important;
+}
+@media only screen and (max-width: 992px) {
+    .myFundraiserContainer {
+
+        padding: 10px 30px !important;
+    }
+    .myFundraiserContainerMainBox{
+        margin-top: 100px !important;
+    }
+}

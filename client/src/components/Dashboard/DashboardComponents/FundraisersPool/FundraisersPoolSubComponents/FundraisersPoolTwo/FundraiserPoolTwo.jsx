@@ -1,19 +1,19 @@
 import { Button, Card, CardActionArea, CardContent, Grid, Typography } from '@mui/material'
 import React from 'react'
-import '../../../../../../styles/DashboardStyles/FundraisersPoolOne.scss'
+import '../../../../../../styles/DashboardStyles/FundraisersPoolTwo.scss'
 import matic from '../../../../../../assets/logos/matic.png'
 import { useSelector } from 'react-redux'
 import ScaleLoader from 'react-spinners/ScaleLoader'
 
-function FundraisersPoolOne() {
+function FundraisersPoolTwo() {
   const allFundraisers = useSelector(state => state.blockchain.allFundraisers)
 
   return (
-    <div className='fundraisersPoolOneContainer'>
+    <div className='fundraisersPoolTwoContainer'>
       <Grid container>
         <Grid item xs={12}>
           <Typography variant='h6' className='fundraisersPoolOneHeader'>
-            Pool one
+            Pool Two
           </Typography>
         </Grid>
       </Grid>
@@ -86,4 +86,4 @@ function FundraisersPoolOne() {
   )
 }
 
-export default FundraisersPoolOne
+export default FundraisersPoolTwo

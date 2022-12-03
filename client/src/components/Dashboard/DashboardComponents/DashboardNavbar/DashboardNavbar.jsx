@@ -1,9 +1,10 @@
 import React from 'react'
 import '../../../../styles/DashboardStyles/DashboardNavbar.scss'
-import { Grid, AppBar, Button, Toolbar, Avatar, Chip, useTheme, useMediaQuery } from '@mui/material'
+import { Grid, AppBar, Button, Toolbar, Avatar, Chip, useTheme, useMediaQuery, Badge } from '@mui/material'
 import logo from '../../../../assets/logos/cbutelogo.png'
 import merlin from '../../../../assets/logos/Merlin.jpeg'
-import { useConnectModal, useAccount, useDisconnect } from '@web3modal/react'
+import { useWeb3Modal } from '@web3modal/react'
+import {useAccount,useDisconnect} from 'wagmi'
 
 // import {useNavigate} from 'react-router-dom'
 // import {useDispatch} from 'react-redux'
@@ -13,7 +14,7 @@ import { useLocation } from 'react-router-dom'
 
 
 import DashboardDrawer from './DashboardDrawer'
-
+import NotificationsIcon from '@mui/icons-material/Notifications';
 function DashboardNavbar() {
   const location = useLocation()
   // const dispatch = useDispatch();
@@ -24,17 +25,18 @@ function DashboardNavbar() {
   // }
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
-  const { open } = useConnectModal()
-  const { account } = useAccount()
-  const disconnect = useDisconnect()
+  const { open } = useWeb3Modal()
+  const { isConnected } = useAccount()
+  const {disconnect} = useDisconnect()
   const connectHandler = async () => {
-    if (account.isConnected) {
+    if (isConnected) {
       disconnect()
     }
     else {
       open()
     }
   }
+ 
 
   return (
     <div className="">
@@ -60,25 +62,30 @@ function DashboardNavbar() {
                           </Button></a>
                         )
                       }
-                      <a href='/newFundraiser' className='navigatingLink'><Button size="large" className={`dashboardNavbarItems ${location.pathname==='/newFundraiser'&&"dashboardNavbarItemsActive"}`}>
+                      <a href='/newFundraiser' className='navigatingLink'><Button size="large" className={`dashboardNavbarItems ${location.pathname === '/newFundraiser' && "dashboardNavbarItemsActive"}`}>
                         New Fundraiser
                       </Button></a>
-                      <a href='/dashboard/badges' className='navigatingLink'><Button size="large" className={`dashboardNavbarItems ${location.pathname==='/myFundraisers'&&"dashboardNavbarItemsActive"}`}>
+                      <a href='/myFundraisers' className='navigatingLink'><Button size="large" className={`dashboardNavbarItems ${location.pathname === '/myFundraisers' && "dashboardNavbarItemsActive"}`}>
                         My Fundraisers
                       </Button></a>
-                      <a className='navigatingLink' href='/dashboard/myProfile'><Chip
+                      <a className='navigatingLink' href='/'><Chip
                         avatar={<Avatar alt="Metamask" src={merlin} />}
                         label="Merlin"
                         variant="outlined"
                         className="dashboardNavbarChip"
                       /></a>
+                      <a className='navigatingLink' href='/notifications'>
+                        <Badge badgeContent={1} color="error">
+                          <NotificationsIcon color="action" className='dashboardNavbarNotification' />
+                        </Badge>
+                      </a>
                       <Button onClick={connectHandler} size="large" className="dashboardNavbarItemsButton">
-                        {account.isConnected ? "disconnect" : "connect wallet"}
+                        {isConnected ? "disconnect" : "connect wallet"}
                       </Button>
                       <a href='/signIn' className='navigatingLink'><Button size="large" className="dashboardNavbarItemsButton">
                         Sign out
                       </Button></a>
-                        
+
 
                     </div>
                   </>

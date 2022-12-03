@@ -5,12 +5,9 @@ $roboto: "Roboto", sans-serif;
 $openSans: "Open Sans", sans-serif;
 $fjalla: "Fjalla One", sans-serif;
 
-.fundraisersPoolOneContainer {
-    background: #6C97A9 !important;
+.fundraisersPoolTwoContainer {
+    background: #9D9D9D !important;
     padding: 15px 80px !important;
-    
-    
-    
 }
 
 .fundraisersPoolOneHeader{
@@ -44,6 +41,9 @@ border:2px solid white !important;
     border-radius: 15px !important;
    
     
+  }
+  .fundraisersPoolOneCard:hover{
+    box-shadow: none !important;
   }
 .fundraisersPoolOneCardParent{
     background: transparent !important;

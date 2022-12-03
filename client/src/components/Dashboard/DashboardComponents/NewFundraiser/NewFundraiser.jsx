@@ -4,6 +4,7 @@ import '../../../../styles/DashboardStyles/NewFundraiser.scss'
 import newFundraiserAsset from '../../../../assets/other/newFundAssets.png'
 import { Grid } from '@mui/material'
 import NewFundraiserForm from './NewFundraiserForm/NewFundraiserForm'
+import { Toaster } from 'react-hot-toast'
 function NewFundraiser() {
   return (
     <div>
@@ -19,6 +20,7 @@ function NewFundraiser() {
         </Grid>
        
       </div>
+      <Toaster position="top-center" reverseOrder={false} />
     </div>
   )
 }

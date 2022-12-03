@@ -7,7 +7,7 @@ import { getHealthBulletinData } from '../../../../redux/actions/common'
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import ScaleLoader from 'react-spinners/ScaleLoader'
 import cbute from '../../../../assets/logos/cbutelogo.png'
-import { useNetwork, useSwitchNetwork } from '@web3modal/react'
+
 function HealthAndNews() {
   const dispatch = useDispatch()
   useEffect(() => {
@@ -15,29 +15,12 @@ function HealthAndNews() {
     // dispatch(getHealthBulletinData(currDate))
   }, [])// eslint-disable-line react-hooks/exhaustive-deps 
   let healthBulletinData = useSelector(state => state.common.healthBulletinData)
-  const { switchNetwork } = useSwitchNetwork()
-  const { network } = useNetwork()
-  const changeNetwork = () => {
-    switchNetwork({ chainId: 80001 })
-  }
+
 
   return (
     <div className='healthBulletinContainer'>
       <Grid>
-        {
-          network?.chain?.id !== 80001 && network?.chain && (
-            <Alert
-              color='error'
-              action={
-                <Button onClick={changeNetwork} color="inherit" size="small">
-                  Switch
-                </Button>
-              }
-            >
-              We recommend you to switch to Polygon Mumbai network
-            </Alert>
-          )
-        }
+        
 
         <Grid item xs={12} className="healthBulletinHeaderBox">
 

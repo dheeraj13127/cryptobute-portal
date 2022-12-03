@@ -9,6 +9,7 @@ app.use(cors({
 }))
 const userRoutes=require('./routes/user')
 const adminRoutes=require('./routes/admin')
+const fundraiserRoutes=require('./routes/fundraiser')
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   next();
@@ -22,6 +23,6 @@ mongoose.connect(process.env.DATABASE,{
 .catch(err=>console.log(err))
 app.use('/user',userRoutes)
 app.use('/admin',adminRoutes)
-
-const PORT=process.env.PORT||5000
+app.use('/fundraiser',fundraiserRoutes)
+const PORT=process.env.PORT||7000
 app.listen(PORT,()=>console.log(`Server started on port ${PORT}`))

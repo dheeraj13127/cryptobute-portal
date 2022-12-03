@@ -9,7 +9,8 @@ import {
   Toolbar,
   Chip,
   Avatar,
-  Button
+  Button,
+  Badge
 
 
 } from "@mui/material";
@@ -18,7 +19,9 @@ import MenuIcon from '@mui/icons-material/Menu'
 import '../../../../styles/DashboardStyles/DashboardDrawer.scss'
 import logo from '../../../../assets/logos/cbutelogo.png'
 import merlin from '../../../../assets/logos/Merlin.jpeg'
-import { useConnectModal, useAccount, useDisconnect } from '@web3modal/react'
+import { useWeb3Modal } from '@web3modal/react'
+import {useAccount,useDisconnect} from 'wagmi'
+import NotificationsIcon from '@mui/icons-material/Notifications';
 // import profileDefault from '../../../../assets/landing/tipogram-logo-2.png'
 // import {useNavigate} from 'react-router-dom'
 // import {useDispatch} from 'react-redux'
@@ -34,11 +37,11 @@ function DrawerComponent({ userData, ethBalance, metamaskAccount }) {
   //   const handleUserSignOut=()=>{
   //       dispatch(userSignOut(navigate));
   //   }
-  const { open } = useConnectModal()
-  const { account } = useAccount()
-  const disconnect = useDisconnect()
-  const connectHandler = () => {
-    if (account.isConnected) {
+  const { open } = useWeb3Modal()
+  const { isConnected } = useAccount()
+  const {disconnect} = useDisconnect()
+  const connectHandler = async () => {
+    if (isConnected) {
       disconnect()
     }
     else {
@@ -74,11 +77,20 @@ function DrawerComponent({ userData, ethBalance, metamaskAccount }) {
 
       >
         <List className="dashboardDrawerList">
+          <div className="dashboardDrawerNotificationBox">
           <ListItem onClick={() => setOpenDrawer(false)} className="dashboardDrawerListItemBoxLogo">
             <div className="dashboardNavbarLogoBox">
               <img src={logo} alt="logo" className="dashboardDrawerLogo" />
             </div>
           </ListItem>
+          <ListItem onClick={() => setOpenDrawer(false)} className="dashboardDrawerListItemBox">
+            <a href='/notifications' className={`navigatingLink dashboardDrawerListItem`}>
+            <Badge badgeContent={0} color="error" className='dashboardDrawerNotificationBadge'>
+                          <NotificationsIcon color="action" className='dashboardDrawerNotification' />
+                        </Badge>
+            </a>
+          </ListItem>
+          </div>
           <ListItem onClick={() => setOpenDrawer(false)} >
 
             <a href="/myProfile" className="navigatingLink dashboardDrawerListProfile">
@@ -93,7 +105,7 @@ function DrawerComponent({ userData, ethBalance, metamaskAccount }) {
           <ListItem onClick={() => setOpenDrawer(false)} className="dashboardDrawerListItemBox" >
 
           <Button onClick={connectHandler} size="large" className="dashboardDrawerWallet">
-                        {account.isConnected ? "disconnect" : "connect wallet"}
+                        {isConnected ? "disconnect" : "connect wallet"}
                       </Button>
           </ListItem>
           <div className="extraBorder"></div>
@@ -105,11 +117,13 @@ function DrawerComponent({ userData, ethBalance, metamaskAccount }) {
               </ListItem>
             )
           }
+          
+
           <ListItem onClick={() => setOpenDrawer(false)} className="dashboardDrawerListItemBox">
             <a href='/newFundraiser' className={`navigatingLink dashboardDrawerListItem ${location.pathname==='/newFundraiser'&&"dashboardDrawerListItemActive"}`}>New Fundraiser</a>
           </ListItem>
           <ListItem onClick={() => setOpenDrawer(false)} className="dashboardDrawerListItemBox">
-            <a href='/dashboard/badges' className={`navigatingLink dashboardDrawerListItem ${location.pathname==='/myFundraisers'&&"dashboardDrawerListItemActive"}`}>My Fundraisers</a>
+            <a href='/myFundraisers' className={`navigatingLink dashboardDrawerListItem ${location.pathname==='/myFundraisers'&&"dashboardDrawerListItemActive"}`}>My Fundraisers</a>
           </ListItem>
           <ListItem onClick={() => setOpenDrawer(false)} className="dashboardDrawerListItemBox">
             <ListItemText>

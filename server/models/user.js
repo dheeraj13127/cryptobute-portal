@@ -49,6 +49,10 @@ const cbuteUserSchema=new mongoose.Schema({
         type:Array,
         required:true
     },
+    notifications:{
+        type:Array,
+        required:true
+    }
 },{timestamps:true}) 
 
 module.exports=mongoose.model("CbuteUser",cbuteUserSchema)

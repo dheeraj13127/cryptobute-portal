@@ -2,6 +2,7 @@ import {Grid, Typography } from '@mui/material'
 import React from 'react'
 import '../../../../styles/DashboardStyles/FundraisersPool.scss'
 import {FundraisersPoolOne} from '.'
+import FundraisersPoolTwo from './FundraisersPoolSubComponents/FundraisersPoolTwo/FundraiserPoolTwo'
 function FundraisersPool() {
 
   return (
@@ -13,6 +14,7 @@ function FundraisersPool() {
             </Grid>
         </Grid>
         <FundraisersPoolOne/>
+        <FundraisersPoolTwo/>
       
     </div>
   )

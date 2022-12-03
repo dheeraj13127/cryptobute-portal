@@ -53,3 +53,46 @@ exports.signUpWithEmail = async (req, res) => {
       
     }
   };
+
+  exports.getProfile = async (req, res) => {
+    const { userId } = req.body;
+   
+    try {
+      await CbuteUser.findById({ _id: userId }).then((resp) =>
+        res.status(200).json({ user: resp })
+      );
+    } catch (e) {
+  
+    }
+  };
+  
+  
+  exports.getAllUsers = async (req, res) => {
+    try {
+      await CbuteUser.find().then((resp) =>
+        res.status(200).json({ users: resp })
+      );
+    } catch (e) {
+      
+    }
+  }
+
+  exports.sendSpendNotifications=async(req,res)=>{
+    try{
+      await CbuteUser.findOneAndUpdate({_id:req.params.userId},{
+        $push:{
+          notifications:req.body
+        }
+      },{upsert:true,returnDocument:true},(err,result)=>{
+        if(err){
+          return res.status(400).json(err)
+        }
+        else{
+          res.status(200).json(result)
+        }
+      })
+  }
+    catch(e){
+
+    }
+  }

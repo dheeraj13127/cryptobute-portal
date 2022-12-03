@@ -4,23 +4,22 @@ import '../../../../../styles/DashboardStyles/NewFundraiser.scss'
 import toast, { Toaster } from "react-hot-toast";
 import { create } from 'ipfs-http-client'
 import { useSelector,useDispatch } from 'react-redux'
-import { useAccount } from '@web3modal/react'
+import { useAccount } from 'wagmi'
 import { createNewFundraiser } from '../../../../../redux/actions/blockchain';
 import {useNavigate} from 'react-router-dom'
 import { useEffect } from 'react';
 const MAX_COUNT = 5;
 function NewFundraiserForm() {
-    
+    const userId=sessionStorage.getItem("userId")
     const dispatch=useDispatch()
     const navigate=useNavigate()
     const [user, setUser] = useState({
         totalFund: '',
-        minContribution:'',
         fundTitle: "",
         fundDescription: "",
     })
     const cbuteFactoryContract=useSelector(state=>state.blockchain.crytobuteFactoryContract)
-    const account=useAccount()
+    const {address}=useAccount()
     const [fundraiserThumbnail, setFundraiserThumbnail] = useState("")
     const [uploadedFiles, setUploadedFiles] = useState([])
     const [fileLimit, setFileLimit] = useState(false);
@@ -43,7 +42,7 @@ function NewFundraiserForm() {
     }
     const handleSignUpSubmit = async(e) => {
         e.preventDefault()
-        if (user.totalFund === undefined || user.minContribution === undefined || user.fundTitle === "" || user.fundDescription === "" || fundraiserThumbnail === "" || uploadedFiles.length === 0) {
+        if (user.totalFund === undefined || user.fundTitle === "" || user.fundDescription === "" || fundraiserThumbnail === "" || uploadedFiles.length === 0) {
             toast("Please fill up the fields",{
                 icon:"❗️"
               })
@@ -59,23 +58,26 @@ function NewFundraiserForm() {
                     upFiles.push(upFilesUrl)
                 }
              
-                await cbuteFactoryContract.methods.createCampaign(user.minContribution,user.totalFund).send({
-                    from:account.account.address
+                await cbuteFactoryContract.methods.createCampaign(user.totalFund).send({
+                    from:address,
+                    maxPriorityFeePerGas: null,
+                    maxFeePerGas: null, 
                 })
                 .then(res=>{
-                    console.log(res);
+                    
                     let newContractAdd=res['events']['NewDeployedAddress']['returnValues'].deployedAddress
                     let data={
-                        userId:"123",
+                        userId:"637e67da6edd201f86863389",
                         contractAddress:newContractAdd,
                         fundInfo:user.fundTitle,
                         fundDescription:user.fundDescription,
                         fundImage:fundThumbnailUrl,
                         fundProofs:upFiles,
-                        minContribution:parseInt(user.minContribution),
-                        totalFund:parseInt(user.totalFund),
-                        userImg:"",
-                        userName:""
+                        totalFund:user.totalFund,
+                        userImg:"x",
+                        userName:"x",
+                        contributors:[],
+                        spendRequests:[]
                     }
                     dispatch(createNewFundraiser(data,navigate))
                     
@@ -89,6 +91,7 @@ function NewFundraiserForm() {
 
             }
             catch(e){
+                console.log(e)
                     toast.error("Something went wrong !")
             }
         }
@@ -136,15 +139,7 @@ function NewFundraiserForm() {
                             required
                         />
 
-                        <TextField
-                            label="Minimum Contribution"
-                            type="number"
-                            className="newFundraiserInput"
-                            name="minContribution"
-                            value={user.minContribution}
-                            onChange={handleInputChange}
-                            required
-                        />
+                      
                         <TextField
                             label="Fundraiser Title"
                             type="text"
