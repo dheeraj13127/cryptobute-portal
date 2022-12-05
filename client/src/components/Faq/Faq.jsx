@@ -4,6 +4,7 @@ import Navbar from "../Landing/LandingComponents/LandingNavbar/LandingNavbar";
 import LandingFooter from "../Landing/LandingComponents/LandingFooter/LandingFooter"
 import "../../styles/Faq/Faq.scss";
 import { Grid } from "@mui/material";
+import AuthenticationNavbar from "../Authentication/AuthenticationNavbar/AuthenticationNavbar";
 const data = {
   title: "FAQ",
   rows: [
@@ -43,7 +44,7 @@ const config = {
 const Faqs = () => {
   return (
     <div className="">
-      <Navbar />
+      <AuthenticationNavbar/>
       <Grid
         container
         sx={{
