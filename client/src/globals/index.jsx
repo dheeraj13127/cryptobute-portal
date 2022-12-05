@@ -9,3 +9,4 @@ export {default as MyFundraisers} from '../components/Dashboard/DashboardCompone
 export {default as MyFundraisersView} from '../components/Dashboard/DashboardComponents/MyFundraisers/MyFundraisersView/MyFundraisersView'
 export {default as Landing} from '../components/Landing/Landing'
 export {default as Faqs} from '../components/Faq/Faq'
+export {default as WhoAreWe} from '../components/WhoAreWe/WhoAreWe' 

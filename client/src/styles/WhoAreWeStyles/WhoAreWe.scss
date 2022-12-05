@@ -1,0 +1,174 @@
+$nunito: "Nunito", sans-serif;
+$inter: "Inter", sans-serif;
+$poppins: "Poppins", sans-serif;
+$roboto: "Roboto", sans-serif;
+$openSans: "Open Sans", sans-serif;
+$Namescolor: #6C97A9;
+$ubuntu: "Ubuntu",sans-serif;
+
+.AboutUsCrewPicDiv{
+    display: flex;
+    justify-content: center;
+}
+.AboutUsWhoAreWeText{
+    font-family: $ubuntu !important;
+    font-style: normal;
+    font-weight: 700 !important;
+    font-size: 45px !important;
+    margin-top: 20px !important;
+    
+    
+}
+.aboutUsGrids{
+    display: flex !important;
+    justify-content: center !important;
+}
+.AboutUsText{
+    color: red;
+}
+
+.AboutUsName{
+    font-family: $poppins;
+    font-style: bold;
+    font-weight: 700 !important;
+    color: $Namescolor;
+    margin-top: 10px !important;
+    
+
+}
+
+
+.AboutUsDiscription{
+    font-family: $openSans;
+    font-style: normal;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    padding-bottom: 15px !important;
+    padding-top: 10px !important;
+    
+    
+}
+.AboutUsMainContainer{
+    justify-content: center;
+    margin-top: 10px !important;
+    
+}
+.AboutUsPrimaryBox{
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 15px !important;
+    // border: 20px solid $Namescolor;
+    padding: 20px;
+    background: $Namescolor;
+    width: 400px !important;
+
+}
+.AboutUsCrewPic{
+    border-radius: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    width: auto;
+    
+    height: 100%;
+    max-height: 200px !important;
+
+    
+    
+    
+    
+}
+.AboutUsSecondaryBox
+{
+    background: #D9D9D9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px !important;
+    
+    
+}
+
+.AboutUsLogoContainer
+{
+    justify-content: space-evenly;
+    background: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px 10px;
+    min-height: 60px !important;  
+
+    
+}
+.AboutUsLogoContainerPics{
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    // padding: 15px !important;
+    width:100%;
+    max-width: 45px !important;
+    height: auto;
+    
+}
+// .AboutUsExpressPic
+// {
+//     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+//     // padding: 15px !important;
+//     width:100%;
+//     max-width: 45px !important;
+//     height: auto;
+    
+// }
+// .AboutUsMongoPic
+// {
+//     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+//     // padding: 15px!important;
+//     width:100%;
+//     max-width: 45px !important;
+//     height: auto;
+    
+
+// }
+// .AboutUsNodePic{
+//     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+//     // padding: 15px !important;
+//     width:100%;
+//     max-width: 45px !important;
+//     height: auto;
+    
+// }
+// .AboutUsSolidityPic
+// {
+//     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+//     // padding: 15px !important;
+//     width:100%;
+//     max-width: 45px !important;
+//     height: auto;
+
+// }
+// .AboutUsFigmaPic
+// {
+//     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+//     // padding: 15px !important;
+//     width:100%;
+//     max-width: 45px !important;
+//     height: auto;
+    
+// }
+// .AboutUsCssPic
+// {
+//     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+//     // padding: 15px !important;
+//     width:100%;
+//     max-width: 45px !important;
+//     height: auto;
+    
+// }
+// .AboutUsJavaScriptPic
+// {
+//     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+//     // padding: 15px !important;
+//     width:100%;
+//     max-width: 45px !important;
+//     height: auto;
+
+    
+// }
