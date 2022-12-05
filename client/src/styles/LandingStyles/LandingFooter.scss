@@ -5,12 +5,10 @@ $roboto: "Roboto", sans-serif;
 $openSans: "Open Sans", sans-serif;
 
 .landingFooterContainer {
-  padding: 30px 50px !important;
+  padding: 10px 80px !important;
   background-color: #6c97a9 !important ;
 }
-.landingFooterImage{
-  margin-left: -20px !important;
-}
+
 .boxes {
   display: flex !important;
   justify-content: center !important;
@@ -22,8 +20,7 @@ $openSans: "Open Sans", sans-serif;
   font-weight: 500 !important;
   color: white !important;
   margin-top: 20px !important;
-  // word-break: break-all !important;
-  // word-wrap: break-word !important;
+
 }
 .landingFooterCompany {
   font-family: $poppins !important;
@@ -67,8 +64,8 @@ $openSans: "Open Sans", sans-serif;
   justify-content: center !important;
 }
 .landingFooterMailIcon {
-  float: left !important ;
-  margin: 0 5px !important;
+  
+  margin: -10px 5px 0px 0px !important;
 }
 .landingFooterLocationIcon {
   color: white !important;
@@ -84,6 +81,12 @@ $openSans: "Open Sans", sans-serif;
   .landingFooterInfo {
     font-size: 13px !important;
   }
+  
+}
+@media only screen and (max-width: 992px) {
+ .landingFooterContainer{
+  padding: 5px 10px !important;
+ }
   
 }
 @media only screen and (max-width: 600px) {

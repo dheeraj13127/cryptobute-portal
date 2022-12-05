@@ -7,7 +7,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import MailIcon from "@mui/icons-material/Mail";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import "../../../../styles/LandingStyles/LandingFooter.scss";
-import logo from "../../../../assets/other/logo2.png";
+import logo from "../../../../assets/logos/cbutelogo.png";
 function LandingFooter() {
   return (
     <div className="landingFooterContainer">
@@ -27,7 +27,7 @@ function LandingFooter() {
           </div>
           <div className="landingFooterIconsBox">
             <a
-              href="/"
+              href="https://github.com/dheeraj13127"
               target="_blank"
               rel="noreferrer"
               className="footerLink"
@@ -35,23 +35,16 @@ function LandingFooter() {
               <GithubIcon className="landingFooterIcon" />
             </a>
             <a
-              href="/"
+              href="https://www.instagram.com/dheeraj_msdian/"
               rel="noreferrer"
               target="_blank"
               className="footerLink"
             >
               <InstagramIcon className="landingFooterIcon" />
             </a>
+         
             <a
-              href="/"
-              rel="noreferrer"
-              target="_blank"
-              className="footerLink"
-            >
-              <FacebookIcon className="landingFooterIcon" />
-            </a>
-            <a
-              href="/"
+              href="https://www.linkedin.com/in/dheerajs7/"
               target="_blank"
               rel="noreferrer"
               className="footerLink"
@@ -81,9 +74,9 @@ function LandingFooter() {
                 Home
               </Typography>
             </a>
-            <a href="/" className="navigatingLink">
+            <a href="/faq" className="navigatingLink">
               <Typography variant="body1" className="landingFooterPages">
-                Blogs
+                FAQ's
               </Typography>
             </a>
             <a href="/" className="navigatingLink">
@@ -91,7 +84,7 @@ function LandingFooter() {
                 Terms of use
               </Typography>
             </a>
-            <a href="/" className="navigatingLink">
+            <a href="/who-are-we" className="navigatingLink">
               <Typography variant="body1" className="landingFooterPages">
                 Who are we?
               </Typography>
@@ -112,14 +105,14 @@ function LandingFooter() {
                 cryptobute@gmail.com
               </Typography>
             </div>
-            <div className="landingFooterMail">
+            {/* <div className="landingFooterMail">
               <LocationOnIcon className="landingFooterLocationIcon" />
               <Typography variant="body1" className="landingFooterPages contactUs">
                 Lalit Ashok,Kumarakrupa Rd <br /> High Grounds, Seshadripuram
                 <br />
                 Bengaluru, Karnataka 560001
               </Typography>
-            </div>
+            </div> */}
           </div>
         </Grid>
         <Grid item xs={12} textAlign="center">

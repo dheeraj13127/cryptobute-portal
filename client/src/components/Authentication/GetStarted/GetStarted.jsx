@@ -10,6 +10,7 @@ import { userGetStarted } from '../../../redux/actions/auth'
 import { AvatarGenerator } from 'random-avatar-generator';
 import { Toaster } from 'react-hot-toast'
 import {useNavigate} from 'react-router-dom'
+import { LandingFooter } from '../../Landing'
 function GetStarted() {
     const { open } = useWeb3Modal()
     const navigate=useNavigate()
@@ -62,6 +63,7 @@ function GetStarted() {
                 </Grid>
             </Grid>
         </div>
+        <LandingFooter/>
         <Toaster position="top-center" reverseOrder={false} />
     </div>
   )

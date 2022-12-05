@@ -8,12 +8,13 @@ import {
   WhyCryptobute,
   LandingFooter,
 } from ".";
+import AuthenticationNavbar from "../Authentication/AuthenticationNavbar/AuthenticationNavbar";
 
 function Landing() {
   return (
     <>
-      <LandingNavbar />
-
+      {/* <LandingNavbar /> */}
+      <AuthenticationNavbar/>
       <HeroSection />
       <IntegratedTechnologies />
       <CryptobuteWorks />

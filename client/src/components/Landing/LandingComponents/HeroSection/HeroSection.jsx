@@ -40,12 +40,13 @@ function HeroSection() {
               </Typography>
             </div>
             <div className="heroSectionButtons">
+              <a href="/getStarted" className="naviagtingLink">
               <Button size="large" className="heroSectionStartedButton">
                 Get Started
               </Button>
-              <Button size="large" className="heroSectionLoginButton">
-                Quick Login
-              </Button>
+              </a>
+              
+              
             </div>
           </div>
         </Grid>

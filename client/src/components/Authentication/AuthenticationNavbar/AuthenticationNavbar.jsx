@@ -29,15 +29,23 @@ function AuthenticationNavbar() {
 
                                 <>
                                     {
-                                        location.pathname!=='/'&&(
+                                        location.pathname !== '/' && (
                                             <a className="navigatingLink" href="/">
-                                            <Button size="small" className="authenticationNavbarUsecase">
-                                                Home
-                                            </Button>
-                                        </a>
+                                                <Button size="small" className="authenticationNavbarUsecase">
+                                                    Home
+                                                </Button>
+                                            </a>
                                         )
                                     }
-                                  
+                                    <a href='/' className='navigatingLink'><Button size="large" className={`dashboardNavbarItems ${location.pathname === '/useCases' && "dashboardNavbarItemsActive"}`}>
+                                      Use Cases
+                                    </Button></a>
+                                    <a href='/faq' className='navigatingLink'><Button size="large" className={`dashboardNavbarItems ${location.pathname === '/faq' && "dashboardNavbarItemsActive"}`}>
+                                       FAQ's
+                                    </Button></a>
+                                    <a href='/getStarted' className='navigatingLink'><Button size="large" className={`dashboardNavbarItems ${location.pathname === '/getStarted' && "dashboardNavbarItemsActive"}`}>
+                                      Get Started
+                                    </Button></a>
                                 </>
                             </div>
 
@@ -61,23 +69,23 @@ function AuthenticationNavbar() {
                                     }}
                                     className="smallAuthenticationNavbar"
                                 >
-                                   
-                                        <>
+
+                                    <>
                                         {
-                                            location.pathname!=='/'&&(
+                                            location.pathname !== '/' && (
                                                 <a className="navigatingLink" href="/">
-                                                <MenuItem
-                                                    className="authenticationSmallNavbarItems"
-                                                    onClick={handleClose}
-                                                >
-                                                    Home
-                                                </MenuItem>
-                                            </a>
+                                                    <MenuItem
+                                                        className="authenticationSmallNavbarItems"
+                                                        onClick={handleClose}
+                                                    >
+                                                        Home
+                                                    </MenuItem>
+                                                </a>
                                             )
                                         }
-                                           
-                                        </>
-                                  
+
+                                    </>
+
                                 </Menu>
                             </div>
                         </Toolbar>
