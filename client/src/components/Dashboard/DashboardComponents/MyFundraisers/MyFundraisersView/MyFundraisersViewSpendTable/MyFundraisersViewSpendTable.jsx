@@ -9,7 +9,6 @@ import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 
 const columns = [
-    { id: 'userId', label: 'UserId', minWidth: 170 },
     { id: 'walletAddress', label: 'Wallet Address', minWidth: 170 },
     {
         id: 'value',

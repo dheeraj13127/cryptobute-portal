@@ -1,0 +1,89 @@
+$nunito: "Nunito", sans-serif;
+$inter: "Inter", sans-serif;
+$poppins: "Poppins", sans-serif;
+$roboto: "Roboto", sans-serif;
+$openSans: "Open Sans", sans-serif;
+$fjalla: "Fjalla One", sans-serif;
+
+.getStartedContainer{
+
+    height: 100vh !important;
+    padding: 15px 80px !important;
+    
+}
+
+.getstartedImg{
+    width: fit-content !important;
+    height: 400px !important;
+    border-radius: 10px !important;
+}
+.getStartedContainerBox{
+    background-color: #9D9D9D !important;
+    padding: 40px 20px !important;
+    margin-top: 100px !important;
+    border-radius: 15px !important;
+}
+
+.getStartedImgBox{
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.getStartedBtnBox{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-top: 170px !important;
+}
+
+.getStartedBtn{
+    background-color:#6C97A9 !important;
+    color: white !important;
+    padding: 15px !important;
+    border: 5px solid white !important;
+    border-radius: 10px !important;
+}
+@media only screen and (max-width: 992px) {
+    .getStartedContainer {
+
+        padding: 10px 30px !important;
+    }
+    .getStartedContainerBox{
+        padding: 20px 10px !important;
+    }
+    .getstartedImg{
+        width: fit-content !important;
+        height: 300px !important;
+        
+    }
+    .getStartedBtnBox{
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        margin-top: 70px !important;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .getStartedContainer {
+
+        padding: 10px 30px !important;
+    }
+    .getStartedContainerBox{
+        padding: 20px 10px !important;
+    }
+    .getstartedImg{
+        width: fit-content !important;
+        height: 200px !important;
+        
+    }
+    .getStartedBtnBox{
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        margin-top: 70px !important;
+    }
+    .getStartedBtn{
+        padding: 10px !important;
+        font-size: 12px !important;
+    }
+}

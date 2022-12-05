@@ -8,9 +8,11 @@ import { useAccount } from 'wagmi'
 import { createNewFundraiser } from '../../../../../redux/actions/blockchain';
 import {useNavigate} from 'react-router-dom'
 import { useEffect } from 'react';
+import { getUserProfile } from '../../../../../redux/actions/auth';
 const MAX_COUNT = 5;
 function NewFundraiserForm() {
     const userId=sessionStorage.getItem("userId")
+    
     const dispatch=useDispatch()
     const navigate=useNavigate()
     const [user, setUser] = useState({
@@ -33,6 +35,10 @@ function NewFundraiserForm() {
             )}`,
         },
     })
+    useEffect(()=>{
+        dispatch(getUserProfile(address))
+      },[]) // eslint-disable-line react-hooks/exhaustive-deps 
+    const userData=useSelector(state=>state.auth.userData)
     const handleInputChange = (e) => {
         e.persist()
         setUser((inp) => ({
@@ -67,15 +73,15 @@ function NewFundraiserForm() {
                     
                     let newContractAdd=res['events']['NewDeployedAddress']['returnValues'].deployedAddress
                     let data={
-                        userId:"637e67da6edd201f86863389",
+                        walletAddress:userId,
                         contractAddress:newContractAdd,
                         fundInfo:user.fundTitle,
                         fundDescription:user.fundDescription,
                         fundImage:fundThumbnailUrl,
                         fundProofs:upFiles,
                         totalFund:user.totalFund,
-                        userImg:"x",
-                        userName:"x",
+                        userImg:userData&&userData.profileImg,
+                        userName:address,
                         contributors:[],
                         spendRequests:[]
                     }

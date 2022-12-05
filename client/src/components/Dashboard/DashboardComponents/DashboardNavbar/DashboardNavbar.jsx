@@ -1,24 +1,25 @@
 import React from 'react'
 import '../../../../styles/DashboardStyles/DashboardNavbar.scss'
-import { Grid, AppBar, Button, Toolbar, Avatar, Chip, useTheme, useMediaQuery, Badge } from '@mui/material'
+import { Grid, AppBar, Button, Toolbar, Avatar, Chip, useTheme, useMediaQuery, Badge, Tooltip } from '@mui/material'
 import logo from '../../../../assets/logos/cbutelogo.png'
 import merlin from '../../../../assets/logos/Merlin.jpeg'
 import { useWeb3Modal } from '@web3modal/react'
 import {useAccount,useDisconnect} from 'wagmi'
+import {useDispatch, useSelector} from 'react-redux'
 
-// import {useNavigate} from 'react-router-dom'
-// import {useDispatch} from 'react-redux'
+import {useNavigate} from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
-// import {userSignOut} from '../../../../redux/action/auth'
-// import profileDefault from '../../../../assets/landing/tipogram-logo-2.png'
+
 
 
 import DashboardDrawer from './DashboardDrawer'
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import { useEffect } from 'react'
+import { getUserProfile } from '../../../../redux/actions/auth'
 function DashboardNavbar() {
   const location = useLocation()
-  // const dispatch = useDispatch();
-  // const navigate=useNavigate()
+  const dispatch = useDispatch();
+  const navigate=useNavigate()
 
   // const handleUserSignOut=()=>{
   //     dispatch(userSignOut(navigate));
@@ -26,15 +27,20 @@ function DashboardNavbar() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
   const { open } = useWeb3Modal()
-  const { isConnected } = useAccount()
+  const { isConnected,address } = useAccount()
   const {disconnect} = useDisconnect()
+  useEffect(()=>{
+    dispatch(getUserProfile(address))
+  },[])// eslint-disable-line react-hooks/exhaustive-deps 
+  const user=useSelector(state=>state.auth.userData)
+
   const connectHandler = async () => {
     if (isConnected) {
       disconnect()
+      sessionStorage.removeItem("userId")
+      navigate("/getStarted")
     }
-    else {
-      open()
-    }
+    
   }
  
 
@@ -56,25 +62,30 @@ function DashboardNavbar() {
                     <div className="dashboardNavbarLarge">
 
                       {
-                        location.pathname !== '/' && (
-                          <a href='/' className='navigatingLink'><Button size="large" className="dashboardNavbarItems">
+                        location.pathname !== '/dashboard' && (
+                          <a href='/dashboard' className='navigatingLink'><Button size="large" className="dashboardNavbarItems">
                             Dashboard
                           </Button></a>
                         )
                       }
-                      <a href='/newFundraiser' className='navigatingLink'><Button size="large" className={`dashboardNavbarItems ${location.pathname === '/newFundraiser' && "dashboardNavbarItemsActive"}`}>
+                      <a href='/dashboard/newFundraiser' className='navigatingLink'><Button size="large" className={`dashboardNavbarItems ${location.pathname === '/dashboard/newFundraiser' && "dashboardNavbarItemsActive"}`}>
                         New Fundraiser
                       </Button></a>
-                      <a href='/myFundraisers' className='navigatingLink'><Button size="large" className={`dashboardNavbarItems ${location.pathname === '/myFundraisers' && "dashboardNavbarItemsActive"}`}>
+                      <a href='/dashboard/myFundraisers' className='navigatingLink'><Button size="large" className={`dashboardNavbarItems ${location.pathname === '/dashboard/myFundraisers' && "dashboardNavbarItemsActive"}`}>
                         My Fundraisers
                       </Button></a>
-                      <a className='navigatingLink' href='/'><Chip
-                        avatar={<Avatar alt="Metamask" src={merlin} />}
-                        label="Merlin"
+                      <a className='navigatingLink' href='/dashboard'>
+                        <Tooltip title={user&&user.walletAddress}>
+                        <Chip
+                        avatar={<Avatar alt="Metamask" src={user&&user.profileImg} />}
+                        label={`${user&&user.walletAddress.substring(0,7)+"..."}`}
                         variant="outlined"
                         className="dashboardNavbarChip"
-                      /></a>
-                      <a className='navigatingLink' href='/notifications'>
+                        sz
+                      />
+                        </Tooltip>
+                       </a>
+                      <a className='navigatingLink' href='/dashboard/notifications'>
                         <Badge badgeContent={1} color="error">
                           <NotificationsIcon color="action" className='dashboardNavbarNotification' />
                         </Badge>
@@ -82,9 +93,7 @@ function DashboardNavbar() {
                       <Button onClick={connectHandler} size="large" className="dashboardNavbarItemsButton">
                         {isConnected ? "disconnect" : "connect wallet"}
                       </Button>
-                      <a href='/signIn' className='navigatingLink'><Button size="large" className="dashboardNavbarItemsButton">
-                        Sign out
-                      </Button></a>
+                    
 
 
                     </div>

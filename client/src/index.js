@@ -14,7 +14,7 @@ import {
 } from "@web3modal/ethereum";
 import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const chains = [chain.mainnet,chain.polygonMumbai,chain.goerli];
+const chains = [chain.polygonMumbai];
 
   
 const { provider } = configureChains(chains, [

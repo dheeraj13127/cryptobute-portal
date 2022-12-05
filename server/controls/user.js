@@ -27,38 +27,36 @@ exports.signUpWithEmail = async (req, res) => {
     }
   };
 
-  exports.signInWithEmail = async (req, res) => {
+  exports.getStarted = async (req, res) => {
     try {
-      const emailAddress = req.body.email;
-      const password = req.body.password;
   
-      const isEmailPresent = await CbuteUser.findOne({ email: emailAddress });
+      const isWallet = await CbuteUser.findOne({ walletAddress: req.body.walletAddress });
      
-      if (!isEmailPresent) {
-        return res.status(400).json({ message: "No such email address found." });
+      if (isWallet) {
+     
+          return res.status(200).json({ user:isWallet, message: "Welcome back !" });
       }
-  
-      if (!bcrypt.compareSync(password, isEmailPresent.password)) {
-        return res.status(400).json({
-         
-          message: "Incorrect Password",
+      else{
+       
+        const newUser = await CbuteUser.create(req.body);
+     
+        return res.status(200).json({
+          user: newUser,
+          message: "Success",
         });
       }
-  
      
-      return res
-        .status(200)
-        .json({ user:isEmailPresent, message: "Welcome back !" });
-    } catch (e) {
       
+    } catch (e) {
+      console.log(e)
     }
   };
 
   exports.getProfile = async (req, res) => {
-    const { userId } = req.body;
+    const { walletAddress } = req.body;
    
     try {
-      await CbuteUser.findById({ _id: userId }).then((resp) =>
+      await CbuteUser.findOne({ walletAddress: walletAddress }).then((resp) =>
         res.status(200).json({ user: resp })
       );
     } catch (e) {
@@ -79,15 +77,18 @@ exports.signUpWithEmail = async (req, res) => {
 
   exports.sendSpendNotifications=async(req,res)=>{
     try{
-      await CbuteUser.findOneAndUpdate({_id:req.params.userId},{
+      console.log(req.params.walletAddress)
+       CbuteUser.findOneAndUpdate({walletAddress:req.params.walletAddress},{
         $push:{
           notifications:req.body
         }
       },{upsert:true,returnDocument:true},(err,result)=>{
         if(err){
+          console.log("err")
           return res.status(400).json(err)
         }
         else{
+          console.log("xxxx")
           res.status(200).json(result)
         }
       })

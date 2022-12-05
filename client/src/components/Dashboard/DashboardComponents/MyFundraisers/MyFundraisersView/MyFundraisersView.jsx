@@ -156,7 +156,8 @@ function MyFundraisersView() {
                         recipientAddress:spend.recipientAddress,
                         spendProofs:upFiles,
                         spendId:parseInt(spendId),
-                        fid:mid
+                        fid:mid,
+                        approved:false
 
                     }
                     dispatch(spendAmount(data,contributors))

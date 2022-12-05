@@ -51,7 +51,7 @@ function ViewFundraiser() {
     const {address} = useAccount()
 
     const handleDonateFund = (cid) => {
-        dispatch(donateFundraiser(address, amount, cbuteContract, userId, mid, cid))
+        dispatch(donateFundraiser(address, amount, cbuteContract, mid, cid))
     }
 
     const convertWei = () => {
@@ -138,12 +138,15 @@ function ViewFundraiser() {
 
                                         </div>
                                         </Grid>
-                                        <Grid item xs={12} lg={4} md={5} sm={6} xl={3}>
+                                        <Grid item xs={12} >
                                             <div className="">
                                                 <Typography variant='h6' className='viewFundraiserMedicalProofsHeader'>Fund raised by :</Typography>
                                                 <div className="viewFundraiserFundRaisedBox">
                                                     <img className='viewFundraiserFundRaisedImg' src={cf.userImg} alt="" />
+                                                    <Tooltip title={cf.userName}>
                                                     <Typography variant='h6' className='viewFundraiserFundRaisedName'>{cf.userName}</Typography>
+                                                    </Tooltip>
+                                                   
                                                 </div>
                                             </div>
                                         </Grid>
