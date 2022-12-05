@@ -1,0 +1,9 @@
+.faq{
+    width: 500px !important;
+    height: 80vh !important;
+}
+@media only screen and (max-width: 768px){
+    .faq{
+        height: 50vh !important;
+    }    
+}
