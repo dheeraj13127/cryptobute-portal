@@ -5,7 +5,7 @@ import { Grid, AppBar, Button, Toolbar, Menu, MenuItem } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useLocation } from "react-router-dom";
 import logo from "../../../assets/logos/cbutelogo.png";
-function AuthenticatonNavbar() {
+function AuthenticationNavbar() {
     const location = useLocation();
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
@@ -38,16 +38,6 @@ function AuthenticatonNavbar() {
                                         )
                                     }
                                   
-                                    <a className="navigatingLink" href="/signup">
-                                        <Button size="small" className="authenticationNavbarItems">
-                                            Sign up
-                                        </Button>
-                                    </a>
-                                    <a className="navigatingLink" href="/signin">
-                                        <Button size="small" className="authenticationNavbarItems">
-                                            Sign in
-                                        </Button>
-                                    </a>
                                 </>
                             </div>
 
@@ -85,23 +75,7 @@ function AuthenticatonNavbar() {
                                             </a>
                                             )
                                         }
-                                            
-                                            <a className="navigatingLink" href="/signup">
-                                                <MenuItem
-                                                    className="authenticationSmallNavbarItems"
-                                                    onClick={handleClose}
-                                                >
-                                                    Sign Up
-                                                </MenuItem>
-                                            </a>
-                                            <a className="navigatingLink" href="/signin">
-                                                <MenuItem
-                                                    className="authenticationSmallNavbarItems"
-                                                    onClick={handleClose}
-                                                >
-                                                    Sign In
-                                                </MenuItem>
-                                            </a>
+                                           
                                         </>
                                   
                                 </Menu>
@@ -114,4 +88,4 @@ function AuthenticatonNavbar() {
     );
 }
 
-export default AuthenticatonNavbar;
+export default AuthenticationNavbar;

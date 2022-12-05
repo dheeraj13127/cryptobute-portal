@@ -1,6 +1,4 @@
 export {default as Dashboard} from '../components/Dashboard/Dashboard'
-export {default as Signin} from '../components/Authentication/Signin/Signin'
-export {default as Signup} from '../components/Authentication/Signup/Signup'
 export {default as PageNotFound} from '../components/PageNotFound/PageNotFound'
 export {default as NewFundraiser} from '../components/Dashboard/DashboardComponents/NewFundraiser/NewFundraiser'
 export {default as ViewFundraiser} from '../components/Dashboard/DashboardComponents/ViewFundraiser/ViewFundraiser'
@@ -10,3 +8,4 @@ export {default as MyFundraisersView} from '../components/Dashboard/DashboardCom
 export {default as Landing} from '../components/Landing/Landing'
 export {default as Faqs} from '../components/Faq/Faq'
 export {default as WhoAreWe} from '../components/WhoAreWe/WhoAreWe' 
+export {default as GetStarted} from '../components/Authentication/GetStarted/GetStarted'

@@ -14,7 +14,7 @@ export const createNewFundraiser = (response, navigate) => async (dispatch) => {
 	await axios.post("http://localhost:7000/fundraiser/newFundraiser", response)
 		.then(async (res) => {
 			let data = {
-				userId: response.userId,
+				walletAddress: response.walletAddress,
 				fundId: res.data.fundraiser._id
 			}
 			await axios.put("http://localhost:7000/fundraiser/updateFundsRaised", data)
@@ -26,7 +26,7 @@ export const createNewFundraiser = (response, navigate) => async (dispatch) => {
 						payload: res.data.fundraiser
 					})
 					setTimeout(() => {
-						navigate("/")
+						navigate("/dashboard")
 					}, 1500)
 				})
 				.catch(e => toast.error("Something went wrong !"))
@@ -53,7 +53,7 @@ export const getFundraisers = () => async (dispatch) => {
 		.catch(err => toast.error("Something went wrong !"))
 }
 
-export const donateFundraiser = (address, amount, contract, userId, mid, cid) => async (dispatch) => {
+export const donateFundraiser = (address, amount, contract, mid, cid) => async (dispatch) => {
 	
 	const newAmount = web3_utils.toWei(amount, "ether")
 
@@ -63,7 +63,7 @@ export const donateFundraiser = (address, amount, contract, userId, mid, cid) =>
 	})
 		.then(async (res) => {
 			let data = {
-				userId: userId,
+				
 				mid: mid,
 				cid: cid,
 				walletAddress:address,
@@ -91,12 +91,12 @@ export const donateFundraiser = (address, amount, contract, userId, mid, cid) =>
 
 export const spendAmount = (data,contributors) => async (dispatch) => {
 	
-
+console.log(contributors)
 
 	await axios.put("http://localhost:7000/fundraiser/updateSpendRequests",data)
 		.then(async (res) => {
 			for(let i=0;i<contributors.length;i++){
-				await axios.put(`http://localhost:7000/user/sendSpendNotifications/${contributors[i].userId}`,data)
+				await axios.put(`http://localhost:7000/user/sendSpendNotifications/${contributors[i].walletAddress}`,data)
 				.then(resp=>{
 					
 				})
@@ -108,4 +108,4 @@ export const spendAmount = (data,contributors) => async (dispatch) => {
 		.catch(err => {
 			toast.error("Something went wrong !")
 		})
-}
+} 

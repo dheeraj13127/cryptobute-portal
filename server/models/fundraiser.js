@@ -1,7 +1,7 @@
 const mongoose=require('mongoose')
 
 const fundraiserSchema=new mongoose.Schema({
-    userId:{
+    walletAddress:{
         type:String,
         required:true,
     },

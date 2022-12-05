@@ -19,8 +19,8 @@ exports.createNewFundraiser=async(req,res)=>{
 }
 exports.updateUserFundsRaised=async(req,res)=>{
   try{
-    const {userId,fundId}=req.body
-    await CbuteUser.findOneAndUpdate({_id:userId},{
+    const {walletAddress,fundId}=req.body
+    await CbuteUser.findOneAndUpdate({walletAddress:walletAddress},{
           $push:{
             fundsRaised:fundId
           }
@@ -58,9 +58,9 @@ exports.getFundraisers=async(req,res)=>{
 
 exports.updateFundraiser=async(req,res)=>{
   try{
-    const {userId,mid,cid,walletAddress,amount,thash}=req.body
+    const {mid,cid,walletAddress,amount,thash}=req.body
     const data={
-      userId:userId,
+      
       walletAddress:walletAddress,
       value:amount,
       thash:thash
@@ -75,7 +75,7 @@ exports.updateFundraiser=async(req,res)=>{
       }
       else{
         
-         CbuteUser.findByIdAndUpdate({_id:userId},{
+         CbuteUser.findOneAndUpdate({walletAddress:walletAddress},{
           $push:{
             fundsDonated:cid
           }

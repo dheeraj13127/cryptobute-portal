@@ -197,8 +197,8 @@ $fjalla: "Fjalla One", sans-serif;
 }
 
 .viewFundraiserFundRaisedImg {
-    width: 150px !important;
-    height: 150px !important;
+    width: 50px !important;
+    height: 50px !important;
     border-radius: 10px !important;
     box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.1) !important;
 }
@@ -211,6 +211,8 @@ $fjalla: "Fjalla One", sans-serif;
     font-family: $openSans !important;
     font-weight: bold !important;
     margin-left: 20px !important;
+    overflow-x: auto !important;
+    color: rgb(77, 73, 73) !important;
 }
 
 @media only screen and (max-width: 992px) {
@@ -252,11 +254,12 @@ $fjalla: "Fjalla One", sans-serif;
 
     .viewFundraiserFundRaisedName {
         font-size: 16px !important;
+        overflow-x: auto !important;
     }
 
     .viewFundraiserFundRaisedImg {
-        width: 100px !important;
-        height: 100px !important;
+        width: 40px !important;
+        height: 40px !important;
     }
     
 }

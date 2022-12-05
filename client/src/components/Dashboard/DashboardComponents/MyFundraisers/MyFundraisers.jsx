@@ -17,7 +17,7 @@ function MyFundraisers() {
     }, [])// eslint-disable-line react-hooks/exhaustive-deps 
     const allFundraisers = useSelector(state => state.blockchain.allFundraisers)
     const userId = sessionStorage.getItem("userId")
-    const myFundraisers = allFundraisers && allFundraisers.filter(x => x.userId === userId)
+    const myFundraisers = allFundraisers && allFundraisers.filter(x => x.walletAddress=== userId)
 
 
     return (
@@ -64,11 +64,11 @@ function MyFundraisers() {
                                                         <img src={mf.userImg} alt="author-img" className="fundraisersPoolOneCreatorImg" />
                                                         <div className="latestImageCreatorInfo">
                                                             <Typography variant='body1' className='fundraisersPoolOneCreatorInfoCreator'>Fundraiser</Typography>
-                                                            <Typography variant='h6' className='fundraisersPoolOneCreatorInfoCreatorName'>{mf.userName}</Typography>
+                                                            <Typography variant='h6' className='fundraisersPoolOneCreatorInfoCreatorName'>{mf.userName.substring(0,7)+"..."}</Typography>
                                                         </div>
                                                     </div>
                                                     <div className="fundraisersPoolOneInfoTipBtnBox">
-                                                        <a href={`/myFundraisers/${mf.contractAddress}/${mf._id}`} className='navigatingLink'> <Button component="span" size='small' className='fundraisersPoolOneInfoTipBtn' >View</Button></a>
+                                                        <a href={`/dashboard/myFundraisers/${mf.contractAddress}/${mf._id}`} className='navigatingLink'> <Button component="span" size='small' className='fundraisersPoolOneInfoTipBtn' >View</Button></a>
                                                     </div>
 
 

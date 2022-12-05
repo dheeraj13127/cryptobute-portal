@@ -20,7 +20,7 @@ function FundraisersPoolTwo() {
 
       {allFundraisers&&allFundraisers.length!==0 ? (
         <div className='fundraisersPoolOneCardParentBox'>
-          {allFundraisers.sort((a, b) => b._id - a._id).filter(x => x.totalFund <= 100).map((x, index) => (
+          {allFundraisers.sort((a, b) => b._id - a._id).filter(x => x.totalFund>50 && x.totalFund <= 100).map((x, index) => (
 
             <div key={index} component={Card} className="fundraisersPoolOneCardParent">
               <CardActionArea className='fundraisersPoolOneCard'>
@@ -49,11 +49,11 @@ function FundraisersPoolTwo() {
                       <img src={x.userImg} alt="author-img" className="fundraisersPoolOneCreatorImg" />
                       <div className="latestImageCreatorInfo">
                         <Typography variant='body1' className='fundraisersPoolOneCreatorInfoCreator'>Fundraiser</Typography>
-                        <Typography variant='h6' className='fundraisersPoolOneCreatorInfoCreatorName'>{x.userName}</Typography>
+                        <Typography variant='h6' className='fundraisersPoolOneCreatorInfoCreatorName'>{x.userName.substring(0,7)+"..."}</Typography>
                       </div>
                     </div>
                     <div className="fundraisersPoolOneInfoTipBtnBox">
-                      <a href={`/viewFundraiser/${x.contractAddress}/${x._id}`} className='navigatingLink'> <Button component="span" size='small' className='fundraisersPoolOneInfoTipBtn' >View</Button></a>
+                      <a href={`/dashboard/viewFundraiser/${x.contractAddress}/${x._id}`} className='navigatingLink'> <Button component="span" size='small' className='fundraisersPoolOneInfoTipBtn' >View</Button></a>
                     </div>
 
 

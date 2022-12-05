@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Drawer,
   IconButton,
@@ -10,7 +10,8 @@ import {
   Chip,
   Avatar,
   Button,
-  Badge
+  Badge,
+  Tooltip
 
 
 } from "@mui/material";
@@ -23,31 +24,34 @@ import { useWeb3Modal } from '@web3modal/react'
 import {useAccount,useDisconnect} from 'wagmi'
 import NotificationsIcon from '@mui/icons-material/Notifications';
 // import profileDefault from '../../../../assets/landing/tipogram-logo-2.png'
-// import {useNavigate} from 'react-router-dom'
-// import {useDispatch} from 'react-redux'
-// import {userSignOut} from '../../../../redux/action/auth'
+import {useNavigate} from 'react-router-dom'
+import {useDispatch, useSelector} from 'react-redux'
+
 import { useLocation } from 'react-router-dom'
+import { getUserProfile } from "../../../../redux/actions/auth";
 const drawerWidth = 240
 function DrawerComponent({ userData, ethBalance, metamaskAccount }) {
   const location = useLocation();
   const [openDrawer, setOpenDrawer] = useState(false);
-  //   const dispatch = useDispatch();
-  //   const navigate=useNavigate()
+    const dispatch = useDispatch();
+    const navigate=useNavigate()
 
   //   const handleUserSignOut=()=>{
   //       dispatch(userSignOut(navigate));
   //   }
   const { open } = useWeb3Modal()
-  const { isConnected } = useAccount()
+  const { isConnected,address } = useAccount()
   const {disconnect} = useDisconnect()
   const connectHandler = async () => {
     if (isConnected) {
       disconnect()
-    }
-    else {
-      open()
+      sessionStorage.removeItem("userId")
     }
   }
+  useEffect(()=>{
+    dispatch(getUserProfile(address))
+  },[])// eslint-disable-line react-hooks/exhaustive-deps 
+  const user=useSelector(state=>state.auth.userData)
   return (
     <>
       <AppBar position="static" className="dashboardNavbar">
@@ -84,7 +88,7 @@ function DrawerComponent({ userData, ethBalance, metamaskAccount }) {
             </div>
           </ListItem>
           <ListItem onClick={() => setOpenDrawer(false)} className="dashboardDrawerListItemBox">
-            <a href='/notifications' className={`navigatingLink dashboardDrawerListItem`}>
+            <a href='/dashboard/notifications' className={`navigatingLink dashboardDrawerListItem`}>
             <Badge badgeContent={0} color="error" className='dashboardDrawerNotificationBadge'>
                           <NotificationsIcon color="action" className='dashboardDrawerNotification' />
                         </Badge>
@@ -93,13 +97,15 @@ function DrawerComponent({ userData, ethBalance, metamaskAccount }) {
           </div>
           <ListItem onClick={() => setOpenDrawer(false)} >
 
-            <a href="/myProfile" className="navigatingLink dashboardDrawerListProfile">
+            <a href="/dashboard" className="navigatingLink dashboardDrawerListProfile">
+            <Tooltip title={user&&user.walletAddress}>
               <Chip
-                avatar={<Avatar alt="Metamask" src={merlin} />}
-                label="Merlin"
+                avatar={<Avatar alt="Metamask" src={user&&user.profileImg} />}
+                label={`${user&&user.walletAddress.substring(0,7)+"..."}`}
                 variant="outlined"
                 className="dashboardDrawerChip"
               />
+              </Tooltip>
             </a>
           </ListItem>
           <ListItem onClick={() => setOpenDrawer(false)} className="dashboardDrawerListItemBox" >
@@ -111,25 +117,21 @@ function DrawerComponent({ userData, ethBalance, metamaskAccount }) {
           <div className="extraBorder"></div>
 
           {
-            location.pathname !== '/' && (
+            location.pathname !== '/dashboard' && (
               <ListItem onClick={() => setOpenDrawer(false)} className="dashboardDrawerListItemBox">
-                <a href='/' className='navigatingLink dashboardDrawerListItem'>Dashboard</a>
+                <a href='/dashboard' className='navigatingLink dashboardDrawerListItem'>Dashboard</a>
               </ListItem>
             )
           }
           
 
           <ListItem onClick={() => setOpenDrawer(false)} className="dashboardDrawerListItemBox">
-            <a href='/newFundraiser' className={`navigatingLink dashboardDrawerListItem ${location.pathname==='/newFundraiser'&&"dashboardDrawerListItemActive"}`}>New Fundraiser</a>
+            <a href='/dashboard/newFundraiser' className={`navigatingLink dashboardDrawerListItem ${location.pathname==='/dashboard/newFundraiser'&&"dashboardDrawerListItemActive"}`}>New Fundraiser</a>
           </ListItem>
           <ListItem onClick={() => setOpenDrawer(false)} className="dashboardDrawerListItemBox">
-            <a href='/myFundraisers' className={`navigatingLink dashboardDrawerListItem ${location.pathname==='/myFundraisers'&&"dashboardDrawerListItemActive"}`}>My Fundraisers</a>
+            <a href='/dashboard/myFundraisers' className={`navigatingLink dashboardDrawerListItem ${location.pathname==='/dashboard/myFundraisers'&&"dashboardDrawerListItemActive"}`}>My Fundraisers</a>
           </ListItem>
-          <ListItem onClick={() => setOpenDrawer(false)} className="dashboardDrawerListItemBox">
-            <ListItemText>
-              <Link to="/signin" className="navigatingLink dashboardDrawerListItem">Sign Out</Link>
-            </ListItemText>
-          </ListItem>
+        
 
         </List>
       </Drawer>
