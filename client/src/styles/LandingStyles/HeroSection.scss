@@ -1,0 +1,160 @@
+$nunito: "Nunito", sans-serif;
+$inter: "Inter", sans-serif;
+$poppins: "Poppins", sans-serif;
+$roboto: "Roboto", sans-serif;
+$openSans: "Open Sans", sans-serif;
+$ubuntu: "Ubuntu", sans-serif;
+.heroSectionContainer {
+  background-color: #ebebeb !important;
+  padding: 30px 80px !important;
+}
+.heroSectionHeading {
+  font-family: $ubuntu !important;
+  font-weight: 700 !important;
+  margin-top: 50px !important;
+}
+.heroSectionSubHeading {
+  margin-top: 50px !important;
+  font-family: $ubuntu !important;
+  font-weight: 400 !important;
+}
+.heroSectionSpan {
+  color: #cd263c !important;
+}
+.heroSectionImage {
+  // height: 450px;
+  // width: 400px;
+}
+.heroSectionImageBox {
+  display: flex !important;
+  justify-content: end !important;
+}
+.heroSectionImgBoxSmall {
+  display: none !important;
+}
+.heroSectionStartedButton {
+  background: #6c97a9 !important;
+  box-shadow: 0 8px 32px 0 rgba(56, 56, 62, 0.37) !important;
+  backdrop-filter: blur(10.5px) !important;
+  -webkit-backdrop-filter: blur(10.5px) !important;
+  border-radius: 10px !important;
+  color: #fff !important;
+  font-family: $poppins !important;
+  font-weight: 600 !important;
+
+  text-transform: capitalize !important;
+}
+.heroSectionStartedButton:hover {
+  background: #fff !important;
+  color: #6c97a9 !important;
+}
+.heroSectionLoginButton {
+  background: #ffff !important;
+  box-shadow: 0 8px 32px 0 rgba(56, 56, 62, 0.37) !important;
+  backdrop-filter: blur(10.5px) !important;
+  -webkit-backdrop-filter: blur(10.5px) !important;
+  border-radius: 10px !important;
+  color: #6c97a9 !important;
+  font-family: $poppins !important;
+  font-weight: 600 !important;
+  margin-left: 40px !important;
+  text-transform: capitalize !important;
+}
+.heroSectionLoginButton:hover {
+  background: #6c97a9 !important;
+  color: #fff !important;
+}
+.heroSectionButtons {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+}
+
+// @media only screen and (max-width: 992px) {
+//   .heroSectionImageBox {
+//     display: none !important;
+//   }
+//   .heroSectionImgBoxSmall {
+//     display: flex !important;
+//     justify-content: center !important;
+//   }
+//   .heroSectionMainImgSmall {
+//     height: 450px !important;
+//     width: 400px !important;
+//   }
+//   .heroSectionContainer {
+//     padding: 20px 20px !important;
+//   }
+//   .heroSectionHeading {
+//     font-weight: 500 !important;
+//     text-align: center !important;
+//     font-size: 30px !important;
+//   }
+//   .heroSectionSubHeading {
+//     font-weight: 300 !important;
+//     text-align: center !important;
+//     font-size: 20px !important;
+//   }
+//   .heroSectionButtons {
+//     display: flex !important;
+//     justify-content: center !important;
+//   }
+//   .heroSectionLoginButton,
+//   .heroSectionStartedButton {
+//     font-size: 12px !important;
+//   }
+// }
+@media only screen and (max-width: 1200px) {
+  .heroSectionImageBox {
+    display: none !important;
+  }
+  .heroSectionImgBoxSmall {
+    display: flex !important;
+    justify-content: center !important;
+  }
+  .heroSectionMainImgSmall {
+    height: 450px !important;
+    width: 400px !important;
+  }
+  .heroSectionHeading {
+    font-size: 45px !important;
+    margin-top: 50px !important;
+  }
+  .heroSectionSubHeading {
+    font-size: 15px !important;
+  }
+  .heroSectionLoginButton,
+  .heroSectionStartedButton {
+    font-size: 12px !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .heroSectionImgageBox {
+    display: none !important;
+  }
+  .heroSectionImgBoxSmall {
+    display: flex !important;
+    justify-content: center !important;
+  }
+  .heroSectionMainImgSmall {
+    height: 350px !important;
+    width: 300px !important;
+  }
+  .heroSectionHeading {
+    font-weight: 500 !important;
+    font-size: 30px !important;
+    text-align: center !important;
+  }
+  .heroSectionSubHeading {
+    font-size: 15px !important;
+    text-align: center !important;
+  }
+  .heroSectionLoginButton,
+  .heroSectionStartedButton {
+    font-size: 12px !important;
+  }
+  .heroSectionButtons {
+    display: flex !important;
+    justify-content: center !important;
+  }
+}

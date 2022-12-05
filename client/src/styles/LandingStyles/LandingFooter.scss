@@ -1,0 +1,156 @@
+$nunito: "Nunito", sans-serif;
+$inter: "Inter", sans-serif;
+$poppins: "Poppins", sans-serif;
+$roboto: "Roboto", sans-serif;
+$openSans: "Open Sans", sans-serif;
+
+.landingFooterContainer {
+  padding: 30px 50px !important;
+  background-color: #6c97a9 !important ;
+}
+.landingFooterImage{
+  margin-left: -20px !important;
+}
+.boxes {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  flex-direction: column !important;
+}
+.landingFooterInfo {
+  font-family: $roboto !important;
+  font-weight: 500 !important;
+  color: white !important;
+  margin-top: 20px !important;
+  // word-break: break-all !important;
+  // word-wrap: break-word !important;
+}
+.landingFooterCompany {
+  font-family: $poppins !important;
+  font-weight: 600 !important;
+  color: white !important;
+}
+
+.landingFooterAboutUs {
+  font-family: $roboto !important;
+  font-weight: 300 !important;
+  color: white !important;
+  margin-top: 80px !important;
+}
+.landingFooterPagesBox {
+  margin-top: 50px !important;
+  margin-inline: auto !important;
+}
+.landingFooterPages {
+  font-family: $roboto !important;
+  font-weight: 400 !important;
+  color: white !important;
+  margin-bottom: 10px !important;
+}
+.landingFootercopyright {
+  font-family: $roboto !important;
+  font-weight: 400 !important;
+  color: white !important;
+  margin-top: 50px !important;
+}
+.landingFooterIconsBox {
+  margin-top: 30px !important;
+  margin-left: -25px !important;
+}
+.landingFooterIcon {
+  color: white !important;
+  margin: 0px 20px !important ;
+}
+.landingFooterMail {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.landingFooterMailIcon {
+  float: left !important ;
+  margin: 0 5px !important;
+}
+.landingFooterLocationIcon {
+  color: white !important;
+  margin: 0 4px !important;
+}
+@media only screen and (max-width: 768px) {
+  .landingFooterCompany {
+    font-size: 15px !important;
+  }
+  .landingFooterAboutUs {
+    font-size: 13px !important;
+  }
+  .landingFooterInfo {
+    font-size: 13px !important;
+  }
+  
+}
+@media only screen and (max-width: 600px) {
+  .landingFooterImage {
+    width: 150px !important;
+    // height: 30px !important;
+    margin-top: -5px !important;
+  }
+  .landingFooterCompany {
+    font-size: 13px !important;
+  }
+  .landingFooterAboutUs {
+    margin-top: 10px !important;
+    font-size: 10px !important;
+  }
+  
+  .boxes{
+    .demo{
+      margin-left: 38% !important;
+    }
+  }
+  .landingFooterPagesBox {
+    margin-top: 20px !important;
+    
+  }
+  .landingFooterCompany {
+    margin-top: 30px !important;
+  }
+
+  .landingFooterIconsBox {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-left: 30% !important;
+  }
+  .landingFooterInfo {
+    margin-top: 5px !important;
+    font-size: 12px !important;
+  }
+  .landingFooterContainer {
+    padding: 30px 10px !important;
+  }
+  .landingFooterPages {
+    font-size: small !important;
+  }
+  .landingFootercopyright {
+    font-size: 10px !important;
+  }
+}
+@media only screen and (max-width: 900px){
+  .landingFooterPagesBox {
+    margin-top: 20px !important;
+  }
+  .landingFooterCompany {
+    margin-top: 30px !important;
+  }
+  .demo {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    margin-left: 30% !important;
+    
+  }
+.landingFooterIconsBox {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-left: 30% !important;
+  }
+}

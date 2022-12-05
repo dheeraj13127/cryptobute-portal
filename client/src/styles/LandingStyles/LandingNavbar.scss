@@ -1,0 +1,82 @@
+$nunito: "Nunito", sans-serif;
+$inter: "Inter", sans-serif;
+$poppins: "Poppins", sans-serif;
+$roboto: "Roboto", sans-serif;
+$openSans: "Open Sans", sans-serif;
+
+.landingNavbar{
+    box-shadow: none !important;
+    background:#6C97A9 !important;
+    padding: 10px 80px !important;
+    
+} 
+.landingNavbarLogoBox{
+    flex:1 !important;
+}
+// .landingNavbarLogo{
+    // height:50px;
+    // width:200px;
+// }
+.landingNavbarItems{
+    text-transform: capitalize !important;
+    font-family: $poppins !important;
+    font-weight: 600 !important;
+    color:#6C97A9 !important;
+    border: 2px solid #6C97A9 !important;
+    background-color: #ffffff !important;
+    border-radius: 30px !important;
+    margin-left: 30px !important;
+    padding: 9px 25px !important;
+    
+    
+}
+.landingNavbarFAQs{
+    text-transform: capitalize !important;
+    font-family: $poppins !important;
+    font-weight: 600 !important;
+    color:#ffffff !important;
+    font-size: 15px !important;
+    margin-left: 20px !important;
+}
+.landingNavbarUsecase{
+    text-transform: capitalize !important;
+    font-family: $poppins !important;
+    font-weight: 600 !important;
+    color:#ffffff !important;
+    font-size: 15px !important;
+}
+.landingNavbarItems:hover{
+  color: white !important;
+   border: 2px solid white !important; 
+   background-color: transparent !important;
+}
+.landingSmallNavbarItems{
+    text-transform: capitalize !important;
+    font-family: $poppins !important;
+    font-weight: 600 !important;
+    color:black !important;
+}
+
+.landingNavbarSmall{
+    display: none !important;
+}
+.landingNavbarMenuIcon{
+    color: #ffffff !important;
+}
+.css-hyum1k-MuiToolbar-root{
+    padding: 0px !important;
+}
+@media only screen and (max-width: 768px) {
+    .landingNavbarLarge{
+        display: none !important;
+    }
+    .landingNavbarSmall{
+        display: flex !important;
+    }
+   }
+@media only screen and (max-width: 992px) {
+    .landingNavbar{
+        padding: 15px 20px !important;
+    }
+  }
+  

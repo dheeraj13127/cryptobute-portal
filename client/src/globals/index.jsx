@@ -7,3 +7,4 @@ export {default as ViewFundraiser} from '../components/Dashboard/DashboardCompon
 export {default as NotificationSection} from '../components/Dashboard/DashboardComponents/NotificationSection/NotificationSection'
 export {default as MyFundraisers} from '../components/Dashboard/DashboardComponents/MyFundraisers/MyFundraisers'
 export {default as MyFundraisersView} from '../components/Dashboard/DashboardComponents/MyFundraisers/MyFundraisersView/MyFundraisersView'
+export {default as Landing} from '../components/Landing/Landing'

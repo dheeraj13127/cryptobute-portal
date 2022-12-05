@@ -1,0 +1,78 @@
+$nunito: "Nunito", sans-serif;
+$inter: "Inter", sans-serif;
+$poppins: "Poppins", sans-serif;
+$roboto: "Roboto", sans-serif;
+$openSans: "Open Sans", sans-serif;
+$ubuntu: "Ubuntu", sans-serif;
+.whyCryptoButeContainer {
+  // padding: 30px 40px !important;
+}
+.whyCryptoTextContent{
+  font-family: $ubuntu !important;
+  font-weight: 600;
+}
+.whyCryptoTextHeading{
+  font-weight: 500 !important;
+}
+.whyCryptoButeParentContainer{
+  font-family: $ubuntu !important;
+}
+.whyCryptoButeCardParentContainer{
+  display: flex !important;
+  align-items:center !important;
+  justify-content:space-evenly !important;
+  padding: 40px 20px;
+}
+.whyCryptoButeHeading {
+  font-family: $ubuntu !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.whyCryptoButeSubHeading {
+  font-family: $ubuntu !important;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.whyCryptoButeHeadingSpan {
+  color: #cd263c !important;
+}
+.whyCryptoButeCardContainer{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-bottom: 30px !important;
+}
+.whyCryptoButeCardContent{
+    border-radius: 30px !important;
+    background-color: #EBEBEB !important;
+    padding: 40px !important;
+    text-align: center !important;
+    width: 70% !important;
+  }
+  .whyCryptoButeImageContainer{
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 20px;
+  }
+  .whyCryptoButeImage{
+    width: 200px !important;
+    height: 200px !important;
+  }
+  @media only screen and (max-width: 768px){
+    .whyCryptoButeParentContainer{
+      // width: 500px !important;
+    }
+    .whyCryptoButeCardContainer {
+      padding: 20px 20px !important;
+      width: 100% !important;
+      
+    }
+    .whyCryptoButeCardContent{
+    // box-sizing: border-box !important;
+  }
+}

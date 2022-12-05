@@ -1,0 +1,23 @@
+$nunito: "Nunito", sans-serif;
+$inter: "Inter", sans-serif;
+$poppins: "Poppins", sans-serif;
+$roboto: "Roboto", sans-serif;
+$openSans: "Open Sans", sans-serif;
+
+.landingContainer {
+  background: none !important;
+
+  padding: 30px 80px !important;
+}
+.landingContainerFooter {
+  background: none !important;
+  padding: 30px 80px !important;
+}
+@media only screen and (max-width: 992px) {
+  .landingContainer {
+    padding: 20px 20px !important;
+  }
+  .landingContainerFooter {
+    padding: 20px 20px !important;
+  }
+}
