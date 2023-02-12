@@ -17,17 +17,17 @@ function App() {
       <BlockchainProvider />
 
  
-    <Router>
-      <Routes>
-      <Route path="/" element={<Landing />} />
-        
-        <Route path='/getStarted' element={<GetStarted/>}/>
-        <Route path='*' element={<PageNotFound/>}/> 
-        <Route path="/dashboard/*" element={<Dashboard/>}/>
-        <Route path="/faq" element={<Faqs />} />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+
+          <Route path='/getStarted' element={<GetStarted />} />
+          <Route path='*' element={<PageNotFound />} />
+          <Route path="/dashboard/*" element={<Dashboard />} />
+          <Route path="/faq" element={<Faqs />} />
           <Route path="/who-are-we" element={<WhoAreWe />} />
-      </Routes> 
-    </Router>
+        </Routes>
+      </Router>
     </>
   );
 }
