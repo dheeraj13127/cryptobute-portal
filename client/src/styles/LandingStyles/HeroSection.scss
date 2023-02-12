@@ -70,40 +70,13 @@ $ubuntu: "Ubuntu", sans-serif;
   flex-direction: row;
 }
 
-// @media only screen and (max-width: 992px) {
-//   .heroSectionImageBox {
-//     display: none !important;
-//   }
-//   .heroSectionImgBoxSmall {
-//     display: flex !important;
-//     justify-content: center !important;
-//   }
-//   .heroSectionMainImgSmall {
-//     height: 450px !important;
-//     width: 400px !important;
-//   }
-//   .heroSectionContainer {
-//     padding: 20px 20px !important;
-//   }
-//   .heroSectionHeading {
-//     font-weight: 500 !important;
-//     text-align: center !important;
-//     font-size: 30px !important;
-//   }
-//   .heroSectionSubHeading {
-//     font-weight: 300 !important;
-//     text-align: center !important;
-//     font-size: 20px !important;
-//   }
-//   .heroSectionButtons {
-//     display: flex !important;
-//     justify-content: center !important;
-//   }
-//   .heroSectionLoginButton,
-//   .heroSectionStartedButton {
-//     font-size: 12px !important;
-//   }
-// }
+@media only screen and (max-width: 992px) {
+  .heroSectionContainer {
+
+      padding: 10px 30px !important;
+  }
+
+}
 @media only screen and (max-width: 1200px) {
   .heroSectionImageBox {
     display: none !important;

@@ -40,7 +40,7 @@ function HeroSection() {
               </Typography>
             </div>
             <div className="heroSectionButtons">
-              <a href="/getStarted" className="naviagtingLink">
+              <a href="/getStarted" className="navigatingLink">
               <Button size="large" className="heroSectionStartedButton">
                 Get Started
               </Button>

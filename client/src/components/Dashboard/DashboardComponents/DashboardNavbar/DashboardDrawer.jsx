@@ -46,6 +46,7 @@ function DrawerComponent({ userData, ethBalance, metamaskAccount }) {
     if (isConnected) {
       disconnect()
       sessionStorage.removeItem("userId")
+      navigate('/getStarted')
     }
   }
   useEffect(()=>{
@@ -98,7 +99,7 @@ function DrawerComponent({ userData, ethBalance, metamaskAccount }) {
           <ListItem onClick={() => setOpenDrawer(false)} >
 
             <a href="/dashboard" className="navigatingLink dashboardDrawerListProfile">
-            <Tooltip title={user&&user.walletAddress}>
+            <Tooltip title={user?user.walletAddress:""}>
               <Chip
                 avatar={<Avatar alt="Metamask" src={user&&user.profileImg} />}
                 label={`${user&&user.walletAddress.substring(0,7)+"..."}`}

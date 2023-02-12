@@ -1,4 +1,5 @@
 import axios from 'axios'
+import toast from 'react-hot-toast';
 import { GET_HEALTH_BULLETIN_DATA } from '../constants/constants'
 
 export const getHealthBulletinData = currDate => async (dispatch) => {
@@ -17,7 +18,7 @@ export const getHealthBulletinData = currDate => async (dispatch) => {
     }
     let config={
         headers:{
-            'x-api-key': 'A9Qej-2Cte0ySyOAXPpsmhJLm8KGH-L7dIqftVGUDY8',
+            'x-api-key': 'OOaKfd84UbR5SikfYYsEnyOMusnZBm10BXOXCnU7yVA',
   
         }
     }
@@ -32,4 +33,31 @@ export const getHealthBulletinData = currDate => async (dispatch) => {
     })
     .catch(err=>console.log(err))
 	
+}
+
+export const rejectSpendRequest = (response) => async (dispatch) => {
+ 
+	await axios.put("http://localhost:7000/fundraiser/rejectSpendRequests",response)
+		.then(res => {
+           toast.success("You have rejected the request")
+           setTimeout(()=>{
+            window.location.reload(false)
+           },1500)
+			
+		})
+		.catch(err => toast.error("Something went wrong !"))
+}
+
+export const approveSpendRequest = (response) => async (dispatch) => {
+ 
+	await axios.put("http://localhost:7000/fundraiser/rejectSpendRequests",response)
+		.then(res => {
+           toast.success("You have approved the request")
+           setTimeout(()=>{
+            window.location.reload(false)
+           },1500)
+      
+			
+		})
+		.catch(err => toast.error("Something went wrong !"))
 }

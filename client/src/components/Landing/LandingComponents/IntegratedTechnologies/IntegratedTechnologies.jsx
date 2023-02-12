@@ -6,7 +6,7 @@ function IntegratedTechnologies() {
   return (
     <div>
       <Grid container className="integratedTechnologiesContainer">
-        <Grid item xs={12}>
+        <Grid item xs={12} className="integratedTechnologiesContainerHeaderBox">
           <Typography variant="h4" className="integratedTechnologiesContainerHeading">
             Integrated with the top
             <span className="integratedTechnologiesContainerSpan"> technologies </span>

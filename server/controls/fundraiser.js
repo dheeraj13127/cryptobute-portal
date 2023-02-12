@@ -117,3 +117,23 @@ exports.updateSpendRequests=async(req,res)=>{
     }
 }
 
+exports.rejectSpendRequest=async(req,res)=>{
+  try{
+      await CbuteUser.findOneAndUpdate({walletAddress:req.body.walletAddress},{
+        $pull:{
+          notifications:{spendId:req.body.spendId}
+        }
+      },(err,result)=>{
+        if(err){
+          return res.status(400).json(err)
+        }
+        else{
+          return res.status(200).json(result)
+        }
+          
+      })
+  }
+  catch(e){
+
+  }
+}

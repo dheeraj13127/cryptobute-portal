@@ -75,7 +75,7 @@ function DashboardNavbar() {
                         My Fundraisers
                       </Button></a>
                       <a className='navigatingLink' href='/dashboard'>
-                        <Tooltip title={user&&user.walletAddress}>
+                        <Tooltip title={user?user.walletAddress:""}>
                         <Chip
                         avatar={<Avatar alt="Metamask" src={user&&user.profileImg} />}
                         label={`${user&&user.walletAddress.substring(0,7)+"..."}`}
@@ -86,7 +86,7 @@ function DashboardNavbar() {
                         </Tooltip>
                        </a>
                       <a className='navigatingLink' href='/dashboard/notifications'>
-                        <Badge badgeContent={1} color="error">
+                        <Badge badgeContent={user?user.notifications.length:0} color="error">
                           <NotificationsIcon color="action" className='dashboardNavbarNotification' />
                         </Badge>
                       </a>

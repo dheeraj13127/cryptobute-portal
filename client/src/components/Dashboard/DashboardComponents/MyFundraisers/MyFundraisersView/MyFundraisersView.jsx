@@ -27,12 +27,12 @@ function MyFundraisersView() {
 
     const { id, mid } = useParams()
     const currentFundraiser = allFundraisers && allFundraisers.filter(x => x._id === mid)
-
+   
     const dispatch = useDispatch()
     const [cbuteContract, setCbuteContract] = useState(null)
     const [collectedFund, setCollectedFund] = useState(0)
     const [contibuters, setContributers] = useState(0)
-    const [amount, setAmount] = useState(0)
+   let spendRequests=[]
 
     useEffect(() => {
 
@@ -47,8 +47,17 @@ function MyFundraisersView() {
         setCollectedFund(collecFund)
         let contri = await cbute?.methods.approversCount().call();
         setContributers(contri)
-      
+        // let z=await cbute?.methods.requestCount().call()
+        // for(let i=0;i<z;i++){
+        //     let x=await cbute.methods.requests(i).call()
+        //     console.log("hi")
+        //     spendRequests.push(x)
+        // }
+       
+       
+       
     }
+    // console.log(spendRequests)
     const [spend, setSpend] = useState({
         spendReason:"",
         spendAmount:0,
@@ -157,7 +166,9 @@ function MyFundraisersView() {
                         spendProofs:upFiles,
                         spendId:parseInt(spendId),
                         fid:mid,
-                        approved:false
+                        approved:false,
+                        spendRequestFrom:address,
+                        cid:id
 
                     }
                     dispatch(spendAmount(data,contributors))
@@ -328,12 +339,12 @@ function MyFundraisersView() {
                                             </div>
 
                                         </Grid>
-                                        <Grid item xs={12}>
+                                        {/* <Grid item xs={12}>
                                             <Typography variant='h6' className='viewFundraiserMedicalProofsHeader'>Spend Request Status :</Typography>
                                             <div className="myFundraiserViewTableBox">
                                                 <MyFundraisersViewSpendTable contributorsData={cf.contributors} />
                                             </div>
-                                        </Grid>
+                                        </Grid> */}
                                     </Grid>
 
                                 ))

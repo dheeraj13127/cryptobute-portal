@@ -10,10 +10,10 @@ import cbute from '../../../../assets/logos/cbutelogo.png'
 
 function HealthAndNews() {
   const dispatch = useDispatch()
-  useEffect(() => {
-    const currDate = new Date()
-    // dispatch(getHealthBulletinData(currDate))
-  }, [])// eslint-disable-line react-hooks/exhaustive-deps 
+  // useEffect(() => {
+  //   const currDate = new Date()
+  //   dispatch(getHealthBulletinData(currDate))
+  // }, [])// eslint-disable-line react-hooks/exhaustive-deps 
   let healthBulletinData = useSelector(state => state.common.healthBulletinData)
 
 
