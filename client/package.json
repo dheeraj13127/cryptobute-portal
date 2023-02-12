@@ -57,7 +57,7 @@
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://localhost:7000/",
+  "proxy": "https://cryptobute.onrender.com",
   "eslintConfig": {
     "extends": [
       "react-app",

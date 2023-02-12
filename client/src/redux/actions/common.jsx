@@ -37,7 +37,7 @@ export const getHealthBulletinData = currDate => async (dispatch) => {
 
 export const rejectSpendRequest = (response) => async (dispatch) => {
  
-	await axios.put("http://localhost:7000/fundraiser/rejectSpendRequests",response)
+	await axios.put("https://cryptobute.onrender.com/fundraiser/rejectSpendRequests",response)
 		.then(res => {
            toast.success("You have rejected the request")
            setTimeout(()=>{
@@ -50,7 +50,7 @@ export const rejectSpendRequest = (response) => async (dispatch) => {
 
 export const approveSpendRequest = (response) => async (dispatch) => {
  
-	await axios.put("http://localhost:7000/fundraiser/rejectSpendRequests",response)
+	await axios.put("https://cryptobute.onrender.com/fundraiser/rejectSpendRequests",response)
 		.then(res => {
            toast.success("You have approved the request")
            setTimeout(()=>{
