@@ -6,7 +6,6 @@
     "@coinbase/wallet-sdk": "^3.5.4",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
-    "@ensdomains/react-ens-address": "^0.0.31",
     "@mui/icons-material": "^5.10.6",
     "@mui/material": "^5.10.6",
     "@ramonak/react-progress-bar": "^5.0.3",
