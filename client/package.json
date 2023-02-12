@@ -38,7 +38,7 @@
     "react-router-dom": "^6.4.1",
     "react-scripts": "5.0.1",
     "react-spinners": "^0.13.6",
-    "react-virtualized": "^9.22.3",
+  
     "redux-thunk": "^2.4.1",
     "sass": "^1.55.0",
     "stream-browserify": "^3.0.0",
