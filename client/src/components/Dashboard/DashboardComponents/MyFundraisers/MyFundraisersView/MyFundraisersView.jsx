@@ -342,7 +342,7 @@ function MyFundraisersView() {
                                         <Grid item xs={12}>
                                             <Typography variant='h6' className='viewFundraiserMedicalProofsHeader'>Spend Request Status :</Typography>
                                             <div className="myFundraiserViewTableBox">
-                                                <MyFundraisersViewSpendTable contributorsData={cf.spendRequests} cbuteContract={cbuteContract} address={address}/>
+                                                <MyFundraisersViewSpendTable contributers={contibuters} contributorsData={cf.spendRequests} cbuteContract={cbuteContract} address={address}/>
                                             </div>
                                         </Grid>
                                     </Grid>

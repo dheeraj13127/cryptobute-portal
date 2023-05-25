@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React,{useEffect, useState} from 'react';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -45,6 +45,11 @@ const columns = [
 
     },
     {
+        id:'approvalCount',
+        label:"Approval Count",
+        minWidth:170
+    },
+    {
         id: 'spendProofs',
         label: 'Medical Proof',
         minWidth: 170,
@@ -56,17 +61,20 @@ const columns = [
         id:'spendId',
         label:'Spend',
         minWidth:170
-    }
+    },
+    
 
 
 ];
 
 
-export default function MyFundraisersViewSpendTable({ contributorsData,cbuteContract,address }) {
+export default function MyFundraisersViewSpendTable({ contributorsData,cbuteContract,address,contributers }) {
+    
     const dispatch=useDispatch()
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
-
+    const [ac,setAc]=useState([])
+   
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
     };
@@ -75,6 +83,18 @@ export default function MyFundraisersViewSpendTable({ contributorsData,cbuteCont
         setRowsPerPage(+event.target.value);
         setPage(0);
     };
+    const getRequestsData=async(spendId,sid)=>{
+        let x=await cbuteContract?.methods.requests(spendId).call()
+        setAc(out=>[...out,{acount:x?.approvalCount,id:sid}])
+       
+       
+    }
+    useEffect(()=>{
+        for(let i=0;i<contributorsData?.length;i++){
+            getRequestsData(i,contributorsData[i].spendId)
+        }
+    },[])
+    console.log(ac)
     const handleSpendAmount=async(spendId)=>{
         await cbuteContract.methods.spendAmount(spendId).send({
             from:address,
@@ -92,8 +112,17 @@ export default function MyFundraisersViewSpendTable({ contributorsData,cbuteCont
             console.log(e)
         })
         
+        
     }
-    
+   const getCount=(sid)=>{
+    if(ac.length>0){
+        let x=ac.filter(y=>y.id===sid)
+        console.log(x)
+        return x[0].acount
+    }
+    return ""
+   }
+
     return (
         <Paper sx={{ width: '100%', overflow: 'hidden', background: "#D9D9D9" }}>
             <TableContainer sx={{ maxHeight: 440 }}>
@@ -119,11 +148,13 @@ export default function MyFundraisersViewSpendTable({ contributorsData,cbuteCont
                                     <TableRow hover role="checkbox" tabIndex={-1} key={k}>
                                         {columns.map((column) => {
                                             const value = row[column.id];
+                                            
                                             return (
                                                 <TableCell key={column.id} align={column.align}>
                                                     {column.id === "spendProofs"&&column.id!=="spendId" && <a href={`${value}`} target="__blank" rel='no-opener' className='navigatingLink'>View</a>}
                                                     {column.id !== "spendProofs"&&column.id!=="spendId" && value}
                                                     {column.id==="spendId"&&<Button variant="contained" onClick={()=>handleSpendAmount(value)}>Spend</Button>}
+                                                    {column.id==="approvalCount"&&<p>{ac.length>0&&contributorsData&&getCount(row.spendId)+"/"+contributers}</p>}
                                                 </TableCell>
                                             );
                                         })}
