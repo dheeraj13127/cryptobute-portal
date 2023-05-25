@@ -11,13 +11,13 @@ export const loadTipogramContract = payload => async (dispatch) => {
 
 export const createNewFundraiser = (response, navigate) => async (dispatch) => {
 
-	await axios.post("https://cryptobute.onrender.com/fundraiser/newFundraiser", response)
+	await axios.post("http://localhost:7000/fundraiser/newFundraiser", response)
 		.then(async (res) => {
 			let data = {
 				walletAddress: response.walletAddress,
 				fundId: res.data.fundraiser._id
 			}
-			await axios.put("https://cryptobute.onrender.com/fundraiser/updateFundsRaised", data)
+			await axios.put("http://localhost:7000/fundraiser/updateFundsRaised", data)
 				.then(resp => {
 					toast.success("Successfully created !")
 
@@ -41,7 +41,7 @@ export const createNewFundraiser = (response, navigate) => async (dispatch) => {
 
 
 export const getFundraisers = () => async (dispatch) => {
-	await axios.get("https://cryptobute.onrender.com/fundraiser/getFundraisers")
+	await axios.get("http://localhost:7000/fundraiser/getFundraisers")
 		.then(res => {
 
 			dispatch({
@@ -71,7 +71,7 @@ export const donateFundraiser = (address, amount, contract, mid, cid) => async (
 				thash:res.transactionHash
 				
 			}
-			await axios.put("https://cryptobute.onrender.com/fundraiser/updateFundraiser", data)
+			await axios.put("http://localhost:7000/fundraiser/updateFundraiser", data)
 				.then(resp => {
 					toast("Thanks for the help", {
 						icon: "🤝"
@@ -93,10 +93,10 @@ export const spendAmount = (data,contributors) => async (dispatch) => {
 	
 console.log(contributors)
 
-	await axios.put("https://cryptobute.onrender.com/fundraiser/updateSpendRequests",data)
+	await axios.put("http://localhost:7000/fundraiser/updateSpendRequests",data)
 		.then(async (res) => {
 			for(let i=0;i<contributors.length;i++){
-				await axios.put(`https://cryptobute.onrender.com/user/sendSpendNotifications/${contributors[i].walletAddress}`,data)
+				await axios.put(`http://localhost:7000/user/sendSpendNotifications/${contributors[i].walletAddress}`,data)
 				.then(resp=>{
 					
 				})
@@ -109,3 +109,16 @@ console.log(contributors)
 			toast.error("Something went wrong !")
 		})
 } 
+
+export const spendCollectedAmount = (response) => async (dispatch) => {
+ 
+	await axios.post("http://localhost:7000/fundraiser/spendAmount",response)
+		.then(res => {
+           toast.success("Amount spent successfully !")
+           setTimeout(()=>{
+            window.location.reload(false)
+           },1500)
+			
+		})
+		.catch(err => toast.error("Something went wrong !"))
+}

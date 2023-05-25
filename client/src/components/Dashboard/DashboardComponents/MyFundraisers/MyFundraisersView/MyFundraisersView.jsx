@@ -339,12 +339,12 @@ function MyFundraisersView() {
                                             </div>
 
                                         </Grid>
-                                        {/* <Grid item xs={12}>
+                                        <Grid item xs={12}>
                                             <Typography variant='h6' className='viewFundraiserMedicalProofsHeader'>Spend Request Status :</Typography>
                                             <div className="myFundraiserViewTableBox">
-                                                <MyFundraisersViewSpendTable contributorsData={cf.contributors} />
+                                                <MyFundraisersViewSpendTable contributorsData={cf.spendRequests} cbuteContract={cbuteContract} address={address}/>
                                             </div>
-                                        </Grid> */}
+                                        </Grid>
                                     </Grid>
 
                                 ))

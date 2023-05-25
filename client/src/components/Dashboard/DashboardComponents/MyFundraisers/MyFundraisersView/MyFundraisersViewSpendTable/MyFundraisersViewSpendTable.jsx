@@ -7,30 +7,63 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
+import { Button } from '@mui/material';
+import { useDispatch } from 'react-redux';
+import { spendCollectedAmount } from '../../../../../../redux/actions/blockchain';
 
 const columns = [
-    { id: 'walletAddress', label: 'Wallet Address', minWidth: 170 },
+  
+    
+  
+    {
+        id: 'description',
+        label: 'Spend reason',
+        minWidth: 170,
+
+
+    },
+
+    {
+        id: 'recipientName',
+        label: 'Recipient Name',
+        minWidth: 170,
+
+
+    },
     {
         id: 'value',
-        label: 'Fund Donated',
+        label: 'Amount',
         minWidth: 170,
 
 
     },
     {
-        id: 'thash',
-        label: 'Transaction Details',
+        id: 'recipientAddress',
+        label: 'Recipient Wallet Address',
         minWidth: 170,
 
 
     },
+    {
+        id: 'spendProofs',
+        label: 'Medical Proof',
+        minWidth: 170,
+
+
+    },
+
+    {
+        id:'spendId',
+        label:'Spend',
+        minWidth:170
+    }
+
 
 ];
 
 
-
-export default function MyFundraisersViewSpendTable({ contributorsData }) {
-    
+export default function MyFundraisersViewSpendTable({ contributorsData,cbuteContract,address }) {
+    const dispatch=useDispatch()
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
@@ -42,7 +75,25 @@ export default function MyFundraisersViewSpendTable({ contributorsData }) {
         setRowsPerPage(+event.target.value);
         setPage(0);
     };
-
+    const handleSpendAmount=async(spendId)=>{
+        await cbuteContract.methods.spendAmount(spendId).send({
+            from:address,
+            maxPriorityFeePerGas: null,
+            maxFeePerGas: null, 
+        })
+        .then(res=>{
+            const data={
+                walletAddress:address,
+                spendId:spendId
+              }
+              dispatch(spendCollectedAmount(data))
+        })
+        .catch(e=>{
+            console.log(e)
+        })
+        
+    }
+    
     return (
         <Paper sx={{ width: '100%', overflow: 'hidden', background: "#D9D9D9" }}>
             <TableContainer sx={{ maxHeight: 440 }}>
@@ -70,8 +121,9 @@ export default function MyFundraisersViewSpendTable({ contributorsData }) {
                                             const value = row[column.id];
                                             return (
                                                 <TableCell key={column.id} align={column.align}>
-                                                    {column.id === "thash" && <a href={`https://mumbai.polygonscan.com/tx/${value}`} target="__blank" rel='no-opener' className='navigatingLink'>View</a>}
-                                                    {column.id !== "thash" && value}
+                                                    {column.id === "spendProofs"&&column.id!=="spendId" && <a href={`${value}`} target="__blank" rel='no-opener' className='navigatingLink'>View</a>}
+                                                    {column.id !== "spendProofs"&&column.id!=="spendId" && value}
+                                                    {column.id==="spendId"&&<Button variant="contained" onClick={()=>handleSpendAmount(value)}>Spend</Button>}
                                                 </TableCell>
                                             );
                                         })}

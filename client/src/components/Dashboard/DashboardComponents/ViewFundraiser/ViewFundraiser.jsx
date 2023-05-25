@@ -51,6 +51,8 @@ function ViewFundraiser() {
     const {address} = useAccount()
 
     const handleDonateFund = (cid) => {
+
+     
         dispatch(donateFundraiser(address, amount, cbuteContract, mid, cid))
     }
 
@@ -150,13 +152,18 @@ function ViewFundraiser() {
                                                 </div>
                                             </div>
                                         </Grid>
-                                        <Grid item xs={12}>
-                                            <div className='viewFundraiserDonateBtnBox'>
-                                                <Button onClick={() => handleOpen()} className='viewFundraiserDonateBtn'>
-                                                    Donate
-                                                </Button>
-                                            </div>
-                                        </Grid>
+                                        {
+                                            cf.userName!==address&&(
+                                                <Grid item xs={12}>
+                                                <div className='viewFundraiserDonateBtnBox'>
+                                                    <Button onClick={() => handleOpen()} className='viewFundraiserDonateBtn'>
+                                                        Donate
+                                                    </Button>
+                                                </div>
+                                            </Grid>
+                                            )
+                                        }
+                                    
                                         <Grid item xs={12}>
                                             <Modal
                                                 open={open}
