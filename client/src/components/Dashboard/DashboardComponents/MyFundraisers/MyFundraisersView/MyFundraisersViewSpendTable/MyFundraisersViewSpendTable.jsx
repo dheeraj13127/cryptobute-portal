@@ -84,7 +84,8 @@ export default function MyFundraisersViewSpendTable({ contributorsData,cbuteCont
         setPage(0);
     };
     const getRequestsData=async(spendId,sid)=>{
-        let x=await cbuteContract?.methods.requests(spendId).call()
+        let x=await cbuteContract?.methods.requests(sid).call()
+        console.log(x)
         setAc(out=>[...out,{acount:x?.approvalCount,id:sid}])
        
        
@@ -93,7 +94,7 @@ export default function MyFundraisersViewSpendTable({ contributorsData,cbuteCont
         for(let i=0;i<contributorsData?.length;i++){
             getRequestsData(i,contributorsData[i].spendId)
         }
-    },[])
+    },[contributorsData])
     console.log(ac)
     const handleSpendAmount=async(spendId)=>{
         await cbuteContract.methods.spendAmount(spendId).send({
@@ -115,12 +116,13 @@ export default function MyFundraisersViewSpendTable({ contributorsData,cbuteCont
         
     }
    const getCount=(sid)=>{
+    console.log(sid)
     if(ac.length>0){
         let x=ac.filter(y=>y.id===sid)
-        console.log(x)
+      
         return x[0].acount
     }
-    return ""
+    return 0
    }
 
     return (
