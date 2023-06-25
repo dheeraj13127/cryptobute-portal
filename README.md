@@ -33,7 +33,7 @@ The transactions are transparent hence the contributors can verify and cannot be
 1. Download / Clone the project into your system
 2. Open the folder in your preferred code editor
 3. Ensure you have NodeJs updated to the latest version
-4. cd into client folder adn server folder and run the following command
+4. cd into client folder and server folder and run the following command
 
 ```bash
 npm install 
