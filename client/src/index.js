@@ -13,8 +13,9 @@ import {
   walletConnectProvider,
 } from "@web3modal/ethereum";
 import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const chains = [chain.polygonMumbai];
+const chains = [chain.mantleTestnet ];
 
   
 const { provider } = configureChains(chains, [

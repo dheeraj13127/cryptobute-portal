@@ -7,7 +7,7 @@ exports.createNewFundraiser=async(req,res)=>{
         const newFundraiser = await FundraiserSchema.create(req.body);
         console.log(newFundraiser)
    
-
+          console.log(req.body)
         return res.status(200).json({
         fundraiser: newFundraiser,
           message: "Success",

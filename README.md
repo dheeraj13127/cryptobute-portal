@@ -16,18 +16,10 @@ The smart contract functionality ensures that the funds raised are not misused a
 The campaigns are transparent and the authenticity of the campaign is agreed upon by the majority
 The transactions are transparent hence the contributors can verify and cannot be tampered.
 
-## Setting up MetaMask
-1. Download the MetaMask extension in your browser
+## Scroll Details
+* SCROLL DEPLOYED ADDRESS - 0x40621e16d1f22310884d589D4Ada98095c6A2B08
+* ETHERSCAN - https://sepolia.scrollscan.com/address/0x40621e16d1f22310884d589D4Ada98095c6A2B08
 
-2. Set up your MetaMask account
-
-3. To connect to Mumbai Test Network (Polygon Testnet)
-
- * NetworkName	Mumbai
- * chainId	80001
- * RPC URL-https://matic-mumbai.chainstacklabs.com
- * Currency Symbol-MATIC
-  
 ## Steps to run CryptoBute
 
 1. Download / Clone the project into your system
@@ -51,5 +43,3 @@ npm run dev
 ```
 
 7. If a webpage doesn't show up then enter [localhost:3000](http://localhost:3000) in your system.
-
-

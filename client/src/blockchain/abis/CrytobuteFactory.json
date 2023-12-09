@@ -1,31 +1,5 @@
 [
 	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "totFund",
-				"type": "uint256"
-			}
-		],
-		"name": "createCampaign",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"name": "deployedAddress",
-				"type": "address"
-			}
-		],
-		"name": "NewDeployedAddress",
-		"type": "event"
-	},
-	{
 		"constant": true,
 		"inputs": [
 			{
@@ -57,5 +31,31 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "totFund",
+				"type": "uint256"
+			}
+		],
+		"name": "createCampaign",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "deployedAddress",
+				"type": "address"
+			}
+		],
+		"name": "NewDeployedAddress",
+		"type": "event"
 	}
 ]

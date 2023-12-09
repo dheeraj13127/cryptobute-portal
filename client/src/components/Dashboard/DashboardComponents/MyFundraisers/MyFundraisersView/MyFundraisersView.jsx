@@ -18,6 +18,7 @@ import ProgressBar from '@ramonak/react-progress-bar'
 import toast, { Toaster } from 'react-hot-toast'
 import { create } from 'ipfs-http-client'
 import MyFundraisersViewTable from './MyFundraisersViewTable/MyFundraisersViewTable'
+import {useSigner} from 'wagmi'
 import MyFundraisersViewSpendTable from './MyFundraisersViewSpendTable/MyFundraisersViewSpendTable'
 const web3_utils = require('web3-utils');
 const MAX_COUNT = 3;
@@ -32,6 +33,7 @@ function MyFundraisersView() {
     const [cbuteContract, setCbuteContract] = useState(null)
     const [collectedFund, setCollectedFund] = useState(0)
     const [contibuters, setContributers] = useState(0)
+    const {data:signer} = useSigner();
    let spendRequests=[]
 
     useEffect(() => {
@@ -168,10 +170,9 @@ function MyFundraisersView() {
                         fid:mid,
                         approved:false,
                         spendRequestFrom:address,
-                        cid:id
-
+                        cid:id 
                     }
-                    dispatch(spendAmount(data,contributors))
+                    dispatch(spendAmount(data,contributors,signer))
                 })
                 .catch(err=>{
                     console.log(err)
