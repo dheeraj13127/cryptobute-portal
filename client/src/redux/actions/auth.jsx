@@ -4,7 +4,7 @@ import { GET_PROFILE } from '../constants/constants'
 
 export const userGetStarted = (data,navigate) => async (dispatch) => {
  
-	await axios.post("http://localhost:7000/user/getStarted",data)
+	await axios.post(process.env.REACT_APP_BACKEND + "/user/getStarted",data)
 		.then(res => {
                 toast.success("Welcome !")
                 sessionStorage.setItem("userId",data.walletAddress) 
@@ -22,7 +22,7 @@ export const getUserProfile = (walletAddress) => async (dispatch) => {
     let data={
         walletAddress:walletAddress
     }
-	await axios.post("http://localhost:7000/user/getStarted",data)
+	await axios.post(process.env.REACT_APP_BACKEND + "/user/getStarted",data)
 		.then(res => {
             dispatch({
                 type:GET_PROFILE,

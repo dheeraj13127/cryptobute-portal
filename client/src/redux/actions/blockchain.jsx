@@ -18,14 +18,14 @@ export const loadTipogramContract = (payload) => async (dispatch) => {
 export const createNewFundraiser = (response, navigate) => async (dispatch) => {
 	console.log(response);
   await axios
-    .post("http://localhost:7000/fundraiser/newFundraiser", response)
+    .post(process.env.REACT_APP_BACKEND + "/fundraiser/newFundraiser", response)
     .then(async (res) => {
       let data = {
         walletAddress: response.walletAddress,
         fundId: res.data.fundraiser._id,
       };
       await axios
-        .put("http://localhost:7000/fundraiser/updateFundsRaised", data)
+        .put(process.env.REACT_APP_BACKEND + "/fundraiser/updateFundsRaised", data)
         .then((resp) => {
           toast.success("Successfully created !");
 
@@ -44,7 +44,7 @@ export const createNewFundraiser = (response, navigate) => async (dispatch) => {
 
 export const getFundraisers = () => async (dispatch) => {
   await axios
-    .get("http://localhost:7000/fundraiser/getFundraisers")
+    .get(process.env.REACT_APP_BACKEND + "/fundraiser/getFundraisers")
     .then((res) => {
       dispatch({
         type: GET_FUNDRAISERS,
@@ -81,7 +81,7 @@ export const donateFundraiser =
           thash: res.transactionHash,
         };
         await axios
-          .put("http://localhost:7000/fundraiser/updateFundraiser", data)
+          .put(process.env.REACT_APP_BACKEND + "/fundraiser/updateFundraiser", data)
           .then((resp) => {
             toast("Thanks for the help", {
               icon: "🤝",
@@ -101,7 +101,7 @@ export const spendAmount = (data, contributors, signer) => async (dispatch) => {
   console.log(contributors);
 
   await axios
-    .put("http://localhost:7000/fundraiser/updateSpendRequests", data)
+    .put(process.env.REACT_APP_BACKEND + "/fundraiser/updateSpendRequests", data)
     .then(async (res) => {
       for (let i = 0; i < contributors.length; i++) {
         await axios
@@ -127,7 +127,7 @@ export const spendAmount = (data, contributors, signer) => async (dispatch) => {
 
 export const spendCollectedAmount = (response) => async (dispatch) => {
   await axios
-    .post("http://localhost:7000/fundraiser/spendAmount", response)
+    .post(process.env.REACT_APP_BACKEND + "/fundraiser/spendAmount", response)
     .then((res) => {
       toast.success("Amount spent successfully !");
       setTimeout(() => {
