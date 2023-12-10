@@ -15,7 +15,7 @@ import {
 import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const chains = [chain.mantleTestnet ];
+const chains = [chain.sepolia ];
 
   
 const { provider } = configureChains(chains, [
